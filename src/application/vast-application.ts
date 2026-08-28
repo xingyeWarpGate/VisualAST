@@ -42,7 +42,28 @@ export class VastApplication {
   }
 
   async validate(request: ValidateRequest): Promise<ValidateResponse> {
-    const contract = request.contract ?? normalizeContract({ requiredEntities: [], optionalEntities: [], forbiddenEntities: [], requiredStates: [], requiredRelations: [] });
+    const contract = request.contract ?? normalizeContract({
+      sceneIdentity: request.ast.scene.identity,
+      location: request.ast.scene.location,
+      time: request.ast.scene.time,
+      environment: request.ast.scene.environment,
+      requiredEntities: request.ast.entities.filter((x) => x.presence === 'required'),
+      optionalEntities: request.ast.entities.filter((x) => x.presence === 'optional'),
+      forbiddenEntities: request.ast.forbiddenEntities,
+      requiredStates: request.ast.states,
+      requiredRelations: request.ast.relations,
+      layers: request.ast.layers,
+      motions: request.ast.motions,
+      composition: request.ast.composition,
+      renderingGrammar: request.ast.style,
+      semanticOpenness: request.ast.semanticOpenness,
+      scaleConstraints: request.ast.scaleConstraints,
+      countConstraints: request.ast.countConstraints,
+      explicitPose: request.ast.explicitPose,
+      explicitGaze: request.ast.explicitGaze,
+      outputModality: request.ast.scene.outputModality as 'image' | 'illustration' | 'diagram' | 'unknown' | undefined,
+      palette: request.ast.palette,
+    });
     return validateVisualAst(contract, request.ast);
   }
 

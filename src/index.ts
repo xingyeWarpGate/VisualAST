@@ -9,4 +9,6 @@ export * from './domain/compiler.js';
 export * from './domain/renderer-boundary.js';
 export * from './application/vast-application.js';
 export * from './adapters/parser/fixture-parser.js';
+export * from './adapters/parser/openai-compatible-parser.js';
+export * from './plugin/tools.js';
 export * from './regression/runner.js';
