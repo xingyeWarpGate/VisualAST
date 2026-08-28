@@ -1,0 +1,38 @@
+{
+  "name": "vast-cli-plugin",
+  "version": "0.1.0",
+  "description": "VAST Core 2.0.2 headless visual compiler CLI and Agent Plugin",
+  "type": "module",
+  "bin": {
+    "vast": "dist/cli/main.js"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./plugin": "./dist/plugin/tools.js",
+    "./plugin/dsh": "./dist/plugin/dsh/index.js"
+  },
+  "files": [
+    "dist",
+    "fixtures",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/**/*.test.ts",
+    "build": "tsc",
+    "regression": "tsx src/regression/runner.ts",
+    "smoke": "npm run build && node dist/cli/main.js version"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
