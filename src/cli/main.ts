@@ -12,6 +12,7 @@ import { formatCompileHuman, formatInspectHuman, formatRegressionHuman, formatVa
 import { formatJson } from './format-json.js';
 import { readInput, writeAtomically } from './io.js';
 import { createApplication } from './runtime.js';
+import { ParserAdapterError } from '../adapters/parser/openai-compatible-parser.js';
 
 const options = { json: { type: 'boolean' }, mode: { type: 'string' }, ack: { type: 'string', multiple: true }, parser: { type: 'string' }, format: { type: 'string' }, out: { type: 'string' }, contract: { type: 'string' }, case: { type: 'string' }, layer: { type: 'string' }, debug: { type: 'boolean' } } as const;
 
@@ -20,6 +21,12 @@ function isTTY() { return Boolean(input.isTTY && output.isTTY); }
 function writeStdout(value: string) { process.stdout.write(value); }
 function writeStderr(value: string) { process.stderr.write(value.endsWith('\n') ? value : `${value}\n`); }
 function envelope<T>(kind: string, data: T) { return { vastVersion: VAST_VERSION, schemaVersion: SCHEMA_VERSION, kind, data }; }
+function compileEnvelope(response: Awaited<ReturnType<VastApplication['compile']>>, format: string) {
+  if (format === 'render-intent' && response.renderIntent) return envelope('vast.render-intent', response.renderIntent);
+  if (format === 'ast' && response.ast) return envelope('vast.visual-ast', response.ast);
+  if (format === 'contract' && response.contract) return envelope('vast.scene-contract', response.contract);
+  return envelope('vast.compile-result', response);
+}
 
 async function interactiveAcknowledgement(issues: { id: string; consequence: string }[]): Promise<string[]> {
   const rl = createInterface({ input, output });
@@ -67,7 +74,7 @@ async function dispatchScene(command: string, text: string, values: Record<strin
   if (response.guard.decision !== 'CONTINUE') { writeStdout(values.json ? formatJson(envelope('vast.compile-result', response)) : formatInspectHuman({ guard: response.guard, parser: { adapter: parser, schemaVersion: '1' }, warnings: [] })); return guardExit(response.guard.decision); }
   if (response.validation?.status === 'FAIL') { writeStdout(values.json ? formatJson(envelope('vast.compile-result', response)) : formatValidationHuman(response.validation)); return ErrorCode.VALIDATION_FAILED; }
   const format = typeof values.format === 'string' ? values.format : 'full';
-  let content = values.json ? formatJson(envelope('vast.compile-result', response)) : formatCompileHuman(response, format);
+  let content = values.json ? formatJson(compileEnvelope(response, format)) : formatCompileHuman(response, format);
   if (!values.json && format === 'render-intent') content = formatJson(envelope('vast.render-intent', response.renderIntent));
   if (!values.json && format === 'ast') content = formatJson(envelope('vast.visual-ast', response.ast));
   if (!values.json && format === 'contract') content = formatJson(envelope('vast.scene-contract', response.contract));
@@ -78,5 +85,5 @@ async function dispatchScene(command: string, text: string, values: Record<strin
 export { main };
 
 if (process.argv[1]?.replace(/\\/g, '/').endsWith('/main.ts') || process.argv[1]?.replace(/\\/g, '/').endsWith('/main.js')) {
-  try { process.exitCode = await main(); } catch (error) { const message = error instanceof VastError ? error.message : error instanceof Error ? error.message : 'Unknown error'; writeStderr(`vast: ${message}`); process.exitCode = error instanceof VastError ? error.code : ErrorCode.INTERNAL_ERROR; }
+try { process.exitCode = await main(); } catch (error) { const message = error instanceof VastError || error instanceof ParserAdapterError ? error.message : error instanceof Error ? error.message : 'Unknown error'; writeStderr(`vast: ${message}`); process.exitCode = error instanceof VastError ? error.code : error instanceof ParserAdapterError ? ErrorCode.PARSER_ERROR : error instanceof Error && error.name === 'ZodError' ? ErrorCode.INPUT_ERROR : ErrorCode.INTERNAL_ERROR; }
 }

@@ -8,7 +8,7 @@ const describeEntity = (entity: VisualAST['entities'][number], ast: VisualAST): 
   return `${entity.label ?? entity.type}${count}，${grammar.actions.join('、')}`;
 };
 
-export function compileRenderIntent(ast: VisualAST): RenderIntent {
+export function compileRenderIntent(ast: VisualAST, _options?: unknown): RenderIntent {
   const lines: string[] = [];
   if (ast.scene.identity) lines.push(`场景：${ast.scene.identity}`);
   if (ast.scene.location) lines.push(`地点：${ast.scene.location}`);

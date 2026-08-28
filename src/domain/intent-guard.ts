@@ -2,7 +2,7 @@ import type { GuardMode, IntentDraft, IntentGuardResult, IntentIssue } from './t
 
 const issue = (id: string, severity: IntentIssue['severity'], type: IntentIssue['type'], evidence: string[], consequence: string, affectedNodes: string[], choices?: string[]): IntentIssue => ({ id, severity, type, evidence, consequence, affectedNodes, choices });
 
-export function analyzeIntent(draft: IntentDraft): IntentGuardResult {
+export function analyzeIntent(draft: IntentDraft, _policy?: unknown): IntentGuardResult {
   const issues: IntentIssue[] = [];
   if (draft.contradictions?.length) issues.push(issue('intent.contradiction', 'error', 'CONTRADICTORY_INTENT', draft.contradictions, '显式要求彼此不兼容，无法冻结 Scene Contract。', [], ['保留要求 A', '保留要求 B']));
   if (draft.attentionCompetition?.length) issues.push(issue('intent.attention-competition', 'warning', 'ATTENTION_COMPETITION', draft.attentionCompetition, '多个高显著性目标可能争夺视觉中心，需要作者决定。', draft.attentionCompetition));
