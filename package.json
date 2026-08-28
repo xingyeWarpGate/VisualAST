@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "description": "VAST Core 2.0.2 headless visual compiler CLI and Agent Plugin",
   "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "bin": {
     "vast": "dist/cli/main.js"
   },

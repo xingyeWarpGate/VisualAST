@@ -5,6 +5,7 @@ import { FixtureParser } from '../src/adapters/parser/fixture-parser.js';
 import { VastApplication } from '../src/application/vast-application.js';
 import { createAgentTools, toolNames } from '../src/plugin/tools.js';
 import { apply as applyDsh } from '../src/plugin/dsh/index.js';
+import * as packageRoot from '../src/index.js';
 
 test('Agent tool registry exposes exactly four stable tools', () => {
   const tools = createAgentTools(new VastApplication(new FixtureParser()));
@@ -41,6 +42,12 @@ test('DSH adapter uses the current Cordis provide surface', () => {
   applyDsh({ provide(name, value) { provided = { name, value }; } });
   assert.equal(provided.name, 'vastAgentTools');
   assert.deepEqual(toolNames(provided.value as ReturnType<typeof createAgentTools>).sort(), ['vast.compile_intent', 'vast.explain_diagnostic', 'vast.inspect_intent', 'vast.validate_ast']);
+});
+
+test('Package root exposes the DSH plugin entrypoint', () => {
+  assert.equal(packageRoot.name, 'vast-cli-plugin');
+  assert.equal(typeof packageRoot.apply, 'function');
+  assert.ok(Array.isArray(packageRoot.inject));
 });
 
 test('DSH adapter does not shell out to CLI', async () => {

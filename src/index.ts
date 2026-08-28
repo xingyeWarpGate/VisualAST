@@ -11,4 +11,5 @@ export * from './application/vast-application.js';
 export * from './adapters/parser/fixture-parser.js';
 export * from './adapters/parser/openai-compatible-parser.js';
 export * from './plugin/tools.js';
+export { name, inject, apply } from './plugin/dsh/index.js';
 export * from './regression/runner.js';
