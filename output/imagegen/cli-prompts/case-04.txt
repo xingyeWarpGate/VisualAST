@@ -1,0 +1,1 @@
+场景：宣纸上的极简水墨空白。年轻女性，ink-wash drawing grammar、selective detail、no unrequested embellishment。小黑石，ink-wash drawing grammar、selective detail、no unrequested embellishment。小鸟（7个），ink-wash drawing grammar、selective detail、no unrequested embellishment。数量约束：entity.birds必须为7个，容差0。保留约75%主动负空间，不填充无意义装饰。绘画语法：ink-wash drawing grammar；selective detail；no unrequested embellishment

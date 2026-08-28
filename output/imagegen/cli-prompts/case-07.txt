@@ -1,0 +1,1 @@
+场景：流行漫画九宫格肖像。正面女性肖像（9个），pop-comic drawing grammar、selective detail、no unrequested embellishment。entity.woman-portrait的明确姿态：frontal repeated identity。数量约束：entity.woman-portrait必须为9个，容差0。保留约10%主动负空间，不填充无意义装饰。构图：exact 3x3 grid。绘画语法：pop-comic drawing grammar；selective detail；no unrequested embellishment

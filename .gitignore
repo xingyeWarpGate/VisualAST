@@ -3,3 +3,4 @@ dist/
 *.tgz
 .vast/
 coverage/
+output/imagegen/*.png

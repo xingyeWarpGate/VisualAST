@@ -17,11 +17,17 @@ export function compileRenderIntent(ast: VisualAST, _options?: unknown): RenderI
   for (const entity of ast.entities.filter((x) => x.presence !== 'forbidden')) lines.push(describeEntity(entity, ast));
   for (const state of ast.states) lines.push(`${state.subjectId ?? '主体'}处于${state.value}${state.visibleConsequences?.length ? `，可见表现为${state.visibleConsequences.join('、')}` : ''}`);
   for (const relation of ast.relations) lines.push(`${relation.subject}与${relation.object}的关系：${relation.type}`);
+  for (const [subject, pose] of Object.entries(ast.explicitPose)) lines.push(`${subject}的明确姿态：${pose}`);
+  for (const [subject, gaze] of Object.entries(ast.explicitGaze)) lines.push(`${subject}的明确视线：${gaze}`);
+  for (const constraint of ast.countConstraints) lines.push(`数量约束：${constraint.scope}必须为${constraint.expected}个，容差${constraint.tolerance}`);
+  for (const constraint of ast.scaleConstraints) lines.push(`相对尺度：${constraint.a}与${constraint.b}为${constraint.expectedRatio}，容差${constraint.tolerance}`);
+  for (const openness of ast.semanticOpenness) lines.push(`${openness.targetId}保持开放语义，必须${openness.requiredProperty.join('、')}，禁止缩窄为${openness.forbiddenNarrowing.join('、')}`);
   for (const layer of ast.layers) lines.push(`${layer.type}层：${layer.content}`);
   for (const motion of ast.motions) lines.push(`运动：${motion.content}${motion.direction ? `，方向${motion.direction}` : ''}`);
   if (ast.composition.negativeSpace !== undefined) lines.push(`保留约${Math.round(ast.composition.negativeSpace * 100)}%主动负空间，不填充无意义装饰`);
   if (ast.composition.framing) lines.push(`构图：${ast.composition.framing}`);
   if (ast.palette?.length) lines.push(`主色：${ast.palette.join('、')}`);
+  if (ast.forbiddenEntities.length) lines.push(`禁止出现：${ast.forbiddenEntities.map((x) => x.label ?? x.type).join('、')}`);
   lines.push(`绘画语法：${ast.style.actions.join('；')}`);
   const negative = ast.forbiddenEntities.length ? `禁止出现：${ast.forbiddenEntities.map((x) => x.label ?? x.type).join('、')}` : undefined;
   return sanitizeRenderIntent({ kind: 'vast.render-intent', prompt: lines.join('。'), layers: ast.layers.map((x) => ({ id: x.id, role: x.type, content: x.content, instructions: [x.mixingMode ?? '保持层级关系'], opacity: x.opacity })), drawingInstructions: lines, composition: ast.composition, palette: ast.palette, negativePrompt: negative, outputModality: ast.scene.outputModality ?? 'image' });

@@ -1,0 +1,1 @@
+场景：工程蓝图中的人体机械类比。生物学女性，technical-drawing drawing grammar、selective detail、no unrequested embellishment。机械剖面图（6个），technical-drawing drawing grammar、selective detail、no unrequested embellishment。entity.diagrams与entity.woman的关系：explanatory_analogy。数量约束：entity.diagrams必须为6个，容差0。绘画语法：technical-drawing drawing grammar；selective detail；no unrequested embellishment

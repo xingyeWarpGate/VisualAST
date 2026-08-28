@@ -1,0 +1,22 @@
+{
+  "date": "2026-08-28",
+  "requestedModel": "gpt-image-2",
+  "execution": "Codex built-in image_gen authorization",
+  "apiKeyUsed": false,
+  "note": "The built-in image tool does not expose a provider model identifier to the workspace. This is an actual generated-image review, but it is not evidence of a direct OpenAI Image API gpt-image-2 request.",
+  "reviewMethod": "Manual visual inspection after each generation using the rendered PNG artifact.",
+  "cases": [
+    { "caseId": "case-01", "artifact": "case-01.png", "status": "PARTIAL PASS", "checks": { "identity": "pass", "pose": "pass", "composition": "partial", "style": "pass", "forbidden": "pass" }, "notes": "Bed reads as furniture; woman is upright with hands on knees; shrine and koi are subordinate. Background reed/texture density is higher than the sparse target." },
+    { "caseId": "case-02", "artifact": "case-02.png", "status": "FAIL", "checks": { "identity": "pass", "count": "fail", "style": "pass", "forbidden": "pass" }, "notes": "Initial image visibly contains 9 desks rather than exactly 12. Rabbit headpiece remains wearable and the cake has one candle." },
+    { "caseId": "case-02", "artifact": "case-02-revision.png", "status": "PASS", "checks": { "identity": "pass", "count": "pass", "style": "pass", "forbidden": "pass" }, "notes": "Targeted revision visibly contains four rows of three desks: exactly 12. One woman, wearable rabbit headpiece, small red cake, one candle." },
+    { "caseId": "case-03", "artifact": "case-03.png", "status": "PASS", "checks": { "identity": "pass", "count": "pass", "composition": "pass", "style": "pass", "forbidden": "pass" }, "notes": "Pure abstract circle and square remain abstract; three diagonal lines are visible; running human and hierarchy are clear." },
+    { "caseId": "case-04", "artifact": "case-04.png", "status": "PASS", "checks": { "negativeSpace": "pass", "count": "pass", "impliedSpace": "pass", "style": "pass", "forbidden": "pass" }, "notes": "Seven birds are visibly countable; blank paper dominates; water/sky remain implied; tiny woman and rock stay near the bottom." },
+    { "caseId": "case-05", "artifact": "case-05.png", "status": "PARTIAL PASS", "checks": { "relation": "pass", "style": "pass", "multiView": "partial" }, "notes": "Seated woman, supporting hand, blue glass, and cubist grammar are clear. The requested separate local viewpoints are not all unambiguously strict." },
+    { "caseId": "case-06", "artifact": "case-06.png", "status": "PASS", "checks": { "identity": "pass", "materials": "pass", "style": "pass", "forbidden": "pass" }, "notes": "Newspaper face, torn black hair, red botanical dress, pencil limbs, one yellow paper flower, and cardboard background are visibly separated." },
+    { "caseId": "case-07", "artifact": "case-07.png", "status": "PASS", "checks": { "grid": "pass", "count": "pass", "controlledMutation": "pass", "style": "pass" }, "notes": "Exact 3x3 grid and nine portraits; center cell has closed eyes and the other eight have open eyes." },
+    { "caseId": "case-08", "artifact": "case-08.png", "status": "FAIL", "checks": { "identity": "pass", "count": "fail", "relation": "partial", "style": "pass" }, "notes": "Initial image visibly contains 7 diagram panels rather than exactly 6." },
+    { "caseId": "case-08", "artifact": "case-08-revision.png", "status": "PASS", "checks": { "identity": "pass", "count": "pass", "relation": "pass", "style": "pass" }, "notes": "Targeted revision visibly contains exactly six panels, three left and three right, with six joint pointers." },
+    { "caseId": "case-09", "artifact": "case-09.png", "status": "PARTIAL PASS", "checks": { "relation": "pass", "pose": "pass", "causalLight": "pass", "semanticOpenness": "partial", "style": "partial" }, "notes": "Girl is curled inside the pipe and blue causal light is clear. Exterior anomalies remain mostly ambiguous, but the image is darker and more rendered/volumetric than the strict cel-animation target; the battery is visually integrated into the rifle." }
+  ],
+  "summary": { "initialPass": 5, "initialPartialPass": 3, "initialFail": 2, "revisedPass": 7, "revisedPartialPass": 3, "revisedFail": 0, "interpretation": "The revised set passes the explicit count failures for Cases 02 and 08; Cases 01, 05, and 09 still require renderer/evaluator iteration for stricter visual fidelity." }
+}
