@@ -1,0 +1,340 @@
+{
+  "runId": "run_1787993216902_b1f8456f",
+  "createdAt": "2026-08-29T08:46:56.902Z",
+  "input": "fixture:demo\n",
+  "contract": {
+    "schemaVersion": "2.2.1",
+    "requestId": "req_99f095c9b1f8456f",
+    "sceneIdentity": "安静的日常室内场景",
+    "entities": [
+      {
+        "id": "entity.subject",
+        "type": "人物",
+        "label": "人物",
+        "identityLock": true,
+        "affordances": [],
+        "source": "user"
+      },
+      {
+        "id": "entity.object",
+        "type": "生活物件",
+        "label": "生活物件",
+        "identityLock": true,
+        "affordances": [],
+        "source": "user"
+      }
+    ],
+    "relations": [],
+    "events": [],
+    "presence": [
+      {
+        "targetId": "entity.subject",
+        "presence": "required",
+        "source": "user"
+      },
+      {
+        "targetId": "entity.object",
+        "presence": "optional",
+        "source": "user"
+      }
+    ],
+    "identityInvariants": [
+      {
+        "targetId": "entity.subject",
+        "invariants": [
+          "人物",
+          "人物"
+        ]
+      },
+      {
+        "targetId": "entity.object",
+        "invariants": [
+          "生活物件",
+          "生活物件"
+        ]
+      }
+    ],
+    "spatialInvariants": [],
+    "scaleRelations": [],
+    "narrativeWeights": {
+      "entity.subject": 1,
+      "entity.object": 0.7000000000000001
+    },
+    "saliencyWeights": {
+      "entity.subject": 1
+    },
+    "semanticOpenness": [],
+    "stylePreferences": [
+      {
+        "style": "neutral",
+        "source": "user"
+      }
+    ],
+    "forbiddenOutcomes": [],
+    "freedomSlots": [],
+    "assumptions": [
+      {
+        "id": "assumption.output-modality",
+        "statement": "Output modality defaults to image",
+        "rationale": "Renderer-neutral visual requests default to image output.",
+        "confidence": 0.95,
+        "accepted": true
+      }
+    ],
+    "unresolvedAmbiguities": [],
+    "composition": {
+      "negativeSpace": 0.2
+    },
+    "palette": [],
+    "explicitPose": {},
+    "explicitGaze": {},
+    "outputModality": "image"
+  },
+  "aestheticPlan": {
+    "schemaVersion": "2.2.1",
+    "visualThesis": "Protect the primary subject while preserving the user's hard constraints.",
+    "focalHierarchy": [
+      {
+        "targetId": "entity.subject",
+        "rank": 1,
+        "semanticWeight": 1,
+        "visualWeight": 1,
+        "detailBudget": 0.9
+      },
+      {
+        "targetId": "entity.object",
+        "rank": 2,
+        "semanticWeight": 0.7000000000000001,
+        "visualWeight": 0.4,
+        "detailBudget": 0.35
+      }
+    ],
+    "composition": {
+      "negativeSpace": 0.2,
+      "focalPath": [
+        "entity.subject",
+        "entity.object"
+      ],
+      "protectedRegions": [
+        "entity.subject",
+        "entity.object"
+      ]
+    },
+    "poseDynamics": {
+      "directives": [
+        "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+      ],
+      "gravity": [
+        "All hanging, liquid and fabric elements follow gravity."
+      ],
+      "inertia": [
+        "Motion direction is coherent with body momentum and contact."
+      ]
+    },
+    "formLighting": {
+      "source": "soft directional key",
+      "direction": "from upper front unless explicitly specified",
+      "facePlanes": [
+        "Keep structural light on entity.subject"
+      ]
+    },
+    "shapeLanguage": {
+      "entityRules": {
+        "entity.subject": [
+          "preserve 人物 identity",
+          "avoid unrequested substitutions"
+        ],
+        "entity.object": [
+          "preserve 生活物件 identity",
+          "avoid unrequested substitutions"
+        ]
+      }
+    },
+    "expression": [],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 5
+    },
+    "renderingGrammar": {
+      "name": "neutral",
+      "actions": [
+        "faithful visible forms",
+        "selective detail",
+        "no unrequested embellishment"
+      ]
+    },
+    "sceneCredibility": {
+      "functionalDetails": [
+        "Preserve visible contact, support and use relationships."
+      ],
+      "culturalAnchors": [],
+      "usageTraces": [
+        "Do not add generic decorative background detail."
+      ]
+    },
+    "controlledFreedom": [],
+    "decisions": [
+      {
+        "target": "entity.subject",
+        "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+        "affectedNodes": [
+          "entity.subject"
+        ],
+        "priority": 1,
+        "degradable": false,
+        "source": "profile:default"
+      },
+      {
+        "target": "background",
+        "reason": "Limit background detail to protect semantic readability.",
+        "affectedNodes": [],
+        "priority": 0.7,
+        "degradable": true,
+        "source": "capability:mock"
+      }
+    ]
+  },
+  "renderIntent": {
+    "kind": "vast.render-intent",
+    "schemaVersion": "2.2.1",
+    "prompt": "Scene: 安静的日常室内场景 Render 人物 as 人物; preserve identity and affordances. Render 生活物件 as 生活物件; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Protect the primary subject while preserving the user's hard constraints. No evaluator, test, score, case, or report metadata in renderer input.",
+    "positiveInstructions": [
+      "Scene: 安静的日常室内场景",
+      "Render 人物 as 人物; preserve identity and affordances.",
+      "Render 生活物件 as 生活物件; preserve identity and affordances.",
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact.",
+      "faithful visible forms",
+      "selective detail",
+      "no unrequested embellishment",
+      "Visual thesis: Protect the primary subject while preserving the user's hard constraints."
+    ],
+    "negativeConstraints": [
+      "No evaluator, test, score, case, or report metadata in renderer input."
+    ],
+    "entityMappings": [
+      {
+        "entityId": "entity.subject",
+        "instruction": "Render 人物 as 人物; preserve identity and affordances."
+      },
+      {
+        "entityId": "entity.object",
+        "instruction": "Render 生活物件 as 生活物件; preserve identity and affordances."
+      }
+    ],
+    "composition": {
+      "negativeSpace": 0.2,
+      "focalPath": [
+        "entity.subject",
+        "entity.object"
+      ],
+      "protectedRegions": [
+        "entity.subject",
+        "entity.object"
+      ]
+    },
+    "physics": [
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact."
+    ],
+    "lighting": [
+      "soft directional key",
+      "from upper front unless explicitly specified",
+      "Keep structural light on entity.subject"
+    ],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 5
+    },
+    "staging": {
+      "level": "single_pass",
+      "stages": [
+        {
+          "stage": 1,
+          "focus": [
+            "composition",
+            "entities",
+            "constraints",
+            "style"
+          ],
+          "locked": [
+            "hard items"
+          ]
+        }
+      ]
+    },
+    "softItems": [],
+    "hardItems": [
+      "required entity: 人物"
+    ],
+    "outputModality": "image",
+    "provenance": {
+      "contractHash": "7a54d6f44358cb22b761a38024e5e461cd14567c29313f88abe057c95a46555e",
+      "aestheticPlanHash": "674cb5824b8717365fe84e0ce4f8543400429a25224ba611185b996bc4be5cee",
+      "intentHash": "req_4f1d2004773b1e0d"
+    }
+  },
+  "adapter": {
+    "id": "mock",
+    "version": "1.0.0",
+    "textToImage": true,
+    "imageToImage": true,
+    "references": true,
+    "masks": false,
+    "staging": true,
+    "aspectRatios": [
+      "square",
+      "landscape",
+      "portrait"
+    ],
+    "qualityModes": [
+      "medium"
+    ]
+  },
+  "render": {
+    "success": true,
+    "adapterId": "mock",
+    "imagePath": "D:\\VisualAST\\artifacts\\vast-2.2.1\\images\\mock-1787993216901.png",
+    "modality": "text",
+    "inputImageCount": 0,
+    "provider": "mock",
+    "model": "structural-test",
+    "metadata": {
+      "request": {
+        "adapterId": "mock",
+        "prompt": "[redacted in mock evidence]",
+        "negativePrompt": "No evaluator, test, score, case, or report metadata in renderer input.",
+        "inputImages": [],
+        "metadata": {
+          "staged": "single_pass"
+        }
+      }
+    }
+  },
+  "revisions": [],
+  "evaluation": {
+    "schemaVersion": "2.2.1",
+    "runId": "run_1787993216902_b1f8456f",
+    "status": "PASS",
+    "scores": {
+      "Constraint Fidelity": 1,
+      "Narrative Readability": 1,
+      "Pose Dynamics": 1,
+      "Physical Coherence": 1,
+      "Composition": 1,
+      "Rendering Grammar": 1,
+      "Information Budget Compliance": 1
+    },
+    "defects": [],
+    "evidence": [
+      "image:D:\\VisualAST\\artifacts\\vast-2.2.1\\images\\mock-1787993216901.png"
+    ],
+    "humanReviewRequired": true
+  }
+}

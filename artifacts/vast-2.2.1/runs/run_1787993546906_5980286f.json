@@ -1,0 +1,254 @@
+{
+  "runId": "run_1787993546906_5980286f",
+  "createdAt": "2026-08-29T08:52:26.906Z",
+  "input": "a simple abstract shape",
+  "contract": {
+    "schemaVersion": "2.2.1",
+    "requestId": "req_8d318b1b5980286f",
+    "sceneIdentity": "安静的日常室内场景",
+    "entities": [],
+    "relations": [],
+    "events": [],
+    "presence": [],
+    "identityInvariants": [],
+    "spatialInvariants": [],
+    "scaleRelations": [],
+    "narrativeWeights": {},
+    "saliencyWeights": {},
+    "semanticOpenness": [],
+    "stylePreferences": [],
+    "forbiddenOutcomes": [],
+    "freedomSlots": [],
+    "assumptions": [
+      {
+        "id": "assumption.output-modality",
+        "statement": "Output modality defaults to image",
+        "rationale": "Renderer-neutral visual requests default to image output.",
+        "confidence": 0.95,
+        "accepted": true
+      }
+    ],
+    "unresolvedAmbiguities": [],
+    "composition": {
+      "negativeSpace": 0.2
+    },
+    "palette": [],
+    "explicitPose": {},
+    "explicitGaze": {},
+    "outputModality": "image"
+  },
+  "aestheticPlan": {
+    "schemaVersion": "2.2.1",
+    "visualThesis": "Keep the scene legible while preserving the user's hard constraints.",
+    "focalHierarchy": [],
+    "composition": {
+      "negativeSpace": 0.2,
+      "focalPath": [],
+      "protectedRegions": []
+    },
+    "poseDynamics": {
+      "directives": [
+        "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+      ],
+      "gravity": [
+        "All hanging, liquid and fabric elements follow gravity."
+      ],
+      "inertia": [
+        "Motion direction is coherent with body momentum and contact."
+      ]
+    },
+    "formLighting": {
+      "source": "soft directional key",
+      "direction": "from upper front unless explicitly specified",
+      "facePlanes": []
+    },
+    "shapeLanguage": {
+      "entityRules": {}
+    },
+    "expression": [],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 3
+    },
+    "renderingGrammar": {
+      "name": "neutral",
+      "actions": [
+        "faithful visible forms",
+        "selective detail",
+        "no unrequested embellishment"
+      ]
+    },
+    "sceneCredibility": {
+      "functionalDetails": [
+        "Preserve visible contact, support and use relationships."
+      ],
+      "culturalAnchors": [],
+      "usageTraces": [
+        "Do not add generic decorative background detail."
+      ]
+    },
+    "controlledFreedom": [],
+    "decisions": [
+      {
+        "target": "scene",
+        "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+        "affectedNodes": [],
+        "priority": 1,
+        "degradable": false,
+        "source": "profile:default"
+      },
+      {
+        "target": "background",
+        "reason": "Limit background detail to protect semantic readability.",
+        "affectedNodes": [],
+        "priority": 0.7,
+        "degradable": true,
+        "source": "capability:image-cli"
+      }
+    ]
+  },
+  "renderIntent": {
+    "kind": "vast.render-intent",
+    "schemaVersion": "2.2.1",
+    "prompt": "Scene: 安静的日常室内场景 All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Keep the scene legible while preserving the user's hard constraints. No evaluator, test, score, case, or report metadata in renderer input.",
+    "positiveInstructions": [
+      "Scene: 安静的日常室内场景",
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact.",
+      "faithful visible forms",
+      "selective detail",
+      "no unrequested embellishment",
+      "Visual thesis: Keep the scene legible while preserving the user's hard constraints."
+    ],
+    "negativeConstraints": [
+      "No evaluator, test, score, case, or report metadata in renderer input."
+    ],
+    "entityMappings": [],
+    "composition": {
+      "negativeSpace": 0.2,
+      "focalPath": [],
+      "protectedRegions": []
+    },
+    "physics": [
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact."
+    ],
+    "lighting": [
+      "soft directional key",
+      "from upper front unless explicitly specified"
+    ],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 3
+    },
+    "staging": {
+      "level": "single_pass",
+      "stages": [
+        {
+          "stage": 1,
+          "focus": [
+            "composition",
+            "entities",
+            "constraints",
+            "style"
+          ],
+          "locked": [
+            "hard items"
+          ]
+        }
+      ]
+    },
+    "softItems": [],
+    "hardItems": [],
+    "outputModality": "image",
+    "provenance": {
+      "contractHash": "123195467767f1b6927e9db8737e9bdb2dd37db866630cdbe989de0f6c903ada",
+      "aestheticPlanHash": "71d424c92e41fb10179dd8691c8eac24f0cc1a54e4efa649ea9715fb6ebb4dfe",
+      "intentHash": "req_b7a6ab930fc2ec53"
+    }
+  },
+  "adapter": {
+    "id": "image-cli",
+    "version": "image-cli",
+    "textToImage": true,
+    "imageToImage": true,
+    "references": true,
+    "masks": false,
+    "staging": false,
+    "aspectRatios": [
+      "square",
+      "landscape",
+      "portrait"
+    ],
+    "qualityModes": [
+      "medium"
+    ]
+  },
+  "render": {
+    "success": false,
+    "adapterId": "image-cli",
+    "modality": "text",
+    "inputImageCount": 0,
+    "model": "gpt-image-2-medium",
+    "provider": "openai-codex",
+    "metadata": {
+      "stderr": "",
+      "cli": {
+        "success": false,
+        "image": null,
+        "error": "Could not save image to cache: [Errno 13] Permission denied: 'D:\\\\hermes\\\\hermes-home\\\\cache\\\\images\\\\openai_codex_gpt-image-2-medium_20260829_165226_f10f0f05.png'",
+        "error_type": "io_error",
+        "model": "gpt-image-2-medium",
+        "prompt": "Scene: 安静的日常室内场景 All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Keep the scene legible while preserving the user's hard constraints. No evaluator, test, score, case, or report metadata in renderer input.",
+        "aspect_ratio": "square",
+        "provider": "openai-codex"
+      }
+    },
+    "error": {
+      "code": "IMAGE_CLI_IO_ERROR",
+      "message": "Could not save image to cache: [Errno 13] Permission denied: 'D:\\\\hermes\\\\hermes-home\\\\cache\\\\images\\\\openai_codex_gpt-image-2-medium_20260829_165226_f10f0f05.png'"
+    }
+  },
+  "revisions": [],
+  "evaluation": {
+    "schemaVersion": "2.2.1",
+    "runId": "run_1787993546906_5980286f",
+    "status": "FAIL",
+    "scores": {
+      "Constraint Fidelity": 0,
+      "Narrative Readability": 0,
+      "Pose Dynamics": 0,
+      "Physical Coherence": 0,
+      "Composition": 0,
+      "Rendering Grammar": 0,
+      "Information Budget Compliance": 0
+    },
+    "defects": [
+      {
+        "id": "defect.render-failed",
+        "dimension": "Constraint Fidelity",
+        "observation": "Could not save image to cache: [Errno 13] Permission denied: 'D:\\\\hermes\\\\hermes-home\\\\cache\\\\images\\\\openai_codex_gpt-image-2-medium_20260829_165226_f10f0f05.png'",
+        "severity": "high",
+        "confidence": 1,
+        "violatedNode": "render.result",
+        "patch": {
+          "id": "patch.retry-render",
+          "operations": [],
+          "targetDefects": [
+            "defect.render-failed"
+          ],
+          "rationale": "Renderer failure is not a semantic revision.",
+          "round": 1
+        }
+      }
+    ],
+    "evidence": [],
+    "humanReviewRequired": false
+  }
+}

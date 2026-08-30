@@ -1,0 +1,299 @@
+{
+  "runId": "run_1787993979500_1bac4302",
+  "createdAt": "2026-08-29T08:59:39.500Z",
+  "input": "一只戴宇航员头盔的橘猫，柔和水彩风格，正方形构图，主体居中",
+  "contract": {
+    "schemaVersion": "2.2.1",
+    "requestId": "req_d502b0221bac4302",
+    "sceneIdentity": "一只戴宇航员头盔的橘猫，柔和水彩风格，正方形构图，主体居中",
+    "entities": [
+      {
+        "id": "entity.cat",
+        "type": "cat",
+        "label": "橘猫",
+        "identityLock": true,
+        "affordances": [],
+        "source": "user"
+      }
+    ],
+    "relations": [],
+    "events": [],
+    "presence": [
+      {
+        "targetId": "entity.cat",
+        "presence": "required",
+        "source": "user"
+      }
+    ],
+    "identityInvariants": [
+      {
+        "targetId": "entity.cat",
+        "invariants": [
+          "cat",
+          "橘猫"
+        ]
+      }
+    ],
+    "spatialInvariants": [],
+    "scaleRelations": [],
+    "narrativeWeights": {
+      "entity.cat": 1
+    },
+    "saliencyWeights": {
+      "entity.cat": 1
+    },
+    "semanticOpenness": [],
+    "stylePreferences": [
+      {
+        "style": "watercolor",
+        "source": "user"
+      }
+    ],
+    "forbiddenOutcomes": [],
+    "freedomSlots": [],
+    "assumptions": [
+      {
+        "id": "assumption.output-modality",
+        "statement": "Output modality defaults to image",
+        "rationale": "Renderer-neutral visual requests default to image output.",
+        "confidence": 0.95,
+        "accepted": true
+      }
+    ],
+    "unresolvedAmbiguities": [],
+    "composition": {
+      "framing": "square"
+    },
+    "palette": [],
+    "explicitPose": {},
+    "explicitGaze": {},
+    "outputModality": "image"
+  },
+  "aestheticPlan": {
+    "schemaVersion": "2.2.1",
+    "visualThesis": "Protect the primary subject while preserving the user's hard constraints.",
+    "focalHierarchy": [
+      {
+        "targetId": "entity.cat",
+        "rank": 1,
+        "semanticWeight": 1,
+        "visualWeight": 1,
+        "detailBudget": 0.9
+      }
+    ],
+    "composition": {
+      "framing": "square",
+      "focalPath": [
+        "entity.cat"
+      ],
+      "protectedRegions": [
+        "entity.cat"
+      ]
+    },
+    "poseDynamics": {
+      "directives": [
+        "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+      ],
+      "gravity": [
+        "All hanging, liquid and fabric elements follow gravity."
+      ],
+      "inertia": [
+        "Motion direction is coherent with body momentum and contact."
+      ]
+    },
+    "formLighting": {
+      "source": "soft directional key",
+      "direction": "from upper front unless explicitly specified",
+      "facePlanes": [
+        "Keep structural light on entity.cat"
+      ]
+    },
+    "shapeLanguage": {
+      "entityRules": {
+        "entity.cat": [
+          "preserve cat identity",
+          "avoid unrequested substitutions"
+        ]
+      }
+    },
+    "expression": [],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 4
+    },
+    "renderingGrammar": {
+      "name": "watercolor",
+      "actions": [
+        "faithful visible forms",
+        "selective detail",
+        "no unrequested embellishment"
+      ]
+    },
+    "sceneCredibility": {
+      "functionalDetails": [
+        "Preserve visible contact, support and use relationships."
+      ],
+      "culturalAnchors": [],
+      "usageTraces": [
+        "Do not add generic decorative background detail."
+      ]
+    },
+    "controlledFreedom": [],
+    "decisions": [
+      {
+        "target": "entity.cat",
+        "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+        "affectedNodes": [
+          "entity.cat"
+        ],
+        "priority": 1,
+        "degradable": false,
+        "source": "profile:default"
+      },
+      {
+        "target": "background",
+        "reason": "Limit background detail to protect semantic readability.",
+        "affectedNodes": [],
+        "priority": 0.7,
+        "degradable": true,
+        "source": "capability:mock"
+      }
+    ]
+  },
+  "renderIntent": {
+    "kind": "vast.render-intent",
+    "schemaVersion": "2.2.1",
+    "prompt": "Scene: 一只戴宇航员头盔的橘猫，柔和水彩风格，正方形构图，主体居中 Render 橘猫 as cat; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Protect the primary subject while preserving the user's hard constraints. No evaluator, test, score, case, or report metadata in renderer input.",
+    "positiveInstructions": [
+      "Scene: 一只戴宇航员头盔的橘猫，柔和水彩风格，正方形构图，主体居中",
+      "Render 橘猫 as cat; preserve identity and affordances.",
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact.",
+      "faithful visible forms",
+      "selective detail",
+      "no unrequested embellishment",
+      "Visual thesis: Protect the primary subject while preserving the user's hard constraints."
+    ],
+    "negativeConstraints": [
+      "No evaluator, test, score, case, or report metadata in renderer input."
+    ],
+    "entityMappings": [
+      {
+        "entityId": "entity.cat",
+        "instruction": "Render 橘猫 as cat; preserve identity and affordances."
+      }
+    ],
+    "composition": {
+      "framing": "square",
+      "focalPath": [
+        "entity.cat"
+      ],
+      "protectedRegions": [
+        "entity.cat"
+      ]
+    },
+    "physics": [
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact."
+    ],
+    "lighting": [
+      "soft directional key",
+      "from upper front unless explicitly specified",
+      "Keep structural light on entity.cat"
+    ],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 4
+    },
+    "staging": {
+      "level": "single_pass",
+      "stages": [
+        {
+          "stage": 1,
+          "focus": [
+            "composition",
+            "entities",
+            "constraints",
+            "style"
+          ],
+          "locked": [
+            "hard items"
+          ]
+        }
+      ]
+    },
+    "softItems": [],
+    "hardItems": [
+      "required entity: 橘猫"
+    ],
+    "outputModality": "image",
+    "provenance": {
+      "contractHash": "9ae9f80a7dc0d731075f75984d55486d13c751d8499e154ebee8cbe3bf966a17",
+      "aestheticPlanHash": "94fd2b992b38819357fa97ab8616b7b87a788119162949eadb4c5239c1c2bc76",
+      "intentHash": "req_af32a9c0acd080fc"
+    }
+  },
+  "adapter": {
+    "id": "mock",
+    "version": "1.0.0",
+    "textToImage": true,
+    "imageToImage": true,
+    "references": true,
+    "masks": false,
+    "staging": true,
+    "aspectRatios": [
+      "square",
+      "landscape",
+      "portrait"
+    ],
+    "qualityModes": [
+      "medium"
+    ]
+  },
+  "render": {
+    "success": true,
+    "adapterId": "mock",
+    "imagePath": "D:\\VisualAST\\artifacts\\vast-2.2.1\\images\\mock-1787993979499.png",
+    "modality": "text",
+    "inputImageCount": 0,
+    "provider": "mock",
+    "model": "structural-test",
+    "metadata": {
+      "request": {
+        "adapterId": "mock",
+        "prompt": "[redacted in mock evidence]",
+        "negativePrompt": "No evaluator, test, score, case, or report metadata in renderer input.",
+        "inputImages": [],
+        "metadata": {
+          "staged": "single_pass"
+        }
+      }
+    }
+  },
+  "revisions": [],
+  "evaluation": {
+    "schemaVersion": "2.2.1",
+    "runId": "run_1787993979500_1bac4302",
+    "status": "PASS",
+    "scores": {
+      "Constraint Fidelity": 1,
+      "Narrative Readability": 1,
+      "Pose Dynamics": 1,
+      "Physical Coherence": 1,
+      "Composition": 1,
+      "Rendering Grammar": 1,
+      "Information Budget Compliance": 1
+    },
+    "defects": [],
+    "evidence": [
+      "image:D:\\VisualAST\\artifacts\\vast-2.2.1\\images\\mock-1787993979499.png"
+    ],
+    "humanReviewRequired": true
+  }
+}

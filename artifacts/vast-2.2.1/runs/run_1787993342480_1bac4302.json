@@ -1,0 +1,320 @@
+{
+  "runId": "run_1787993342480_1bac4302",
+  "createdAt": "2026-08-29T08:49:02.480Z",
+  "input": "一只戴宇航员头盔的橘猫，柔和水彩风格，正方形构图，主体居中",
+  "contract": {
+    "schemaVersion": "2.2.1",
+    "requestId": "req_d502b0221bac4302",
+    "sceneIdentity": "安静的日常室内场景",
+    "entities": [
+      {
+        "id": "entity.cat",
+        "type": "cat",
+        "label": "橘猫",
+        "identityLock": true,
+        "affordances": [],
+        "source": "user"
+      }
+    ],
+    "relations": [],
+    "events": [],
+    "presence": [
+      {
+        "targetId": "entity.cat",
+        "presence": "required",
+        "source": "user"
+      }
+    ],
+    "identityInvariants": [
+      {
+        "targetId": "entity.cat",
+        "invariants": [
+          "cat",
+          "橘猫"
+        ]
+      }
+    ],
+    "spatialInvariants": [],
+    "scaleRelations": [],
+    "narrativeWeights": {
+      "entity.cat": 1
+    },
+    "saliencyWeights": {
+      "entity.cat": 1
+    },
+    "semanticOpenness": [],
+    "stylePreferences": [
+      {
+        "style": "watercolor",
+        "source": "user"
+      }
+    ],
+    "forbiddenOutcomes": [],
+    "freedomSlots": [],
+    "assumptions": [
+      {
+        "id": "assumption.output-modality",
+        "statement": "Output modality defaults to image",
+        "rationale": "Renderer-neutral visual requests default to image output.",
+        "confidence": 0.95,
+        "accepted": true
+      }
+    ],
+    "unresolvedAmbiguities": [],
+    "composition": {
+      "negativeSpace": 0.2
+    },
+    "palette": [],
+    "explicitPose": {},
+    "explicitGaze": {},
+    "outputModality": "image"
+  },
+  "aestheticPlan": {
+    "schemaVersion": "2.2.1",
+    "visualThesis": "Protect the primary subject while preserving the user's hard constraints.",
+    "focalHierarchy": [
+      {
+        "targetId": "entity.cat",
+        "rank": 1,
+        "semanticWeight": 1,
+        "visualWeight": 1,
+        "detailBudget": 0.9
+      }
+    ],
+    "composition": {
+      "negativeSpace": 0.2,
+      "focalPath": [
+        "entity.cat"
+      ],
+      "protectedRegions": [
+        "entity.cat"
+      ]
+    },
+    "poseDynamics": {
+      "directives": [
+        "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+      ],
+      "gravity": [
+        "All hanging, liquid and fabric elements follow gravity."
+      ],
+      "inertia": [
+        "Motion direction is coherent with body momentum and contact."
+      ]
+    },
+    "formLighting": {
+      "source": "soft directional key",
+      "direction": "from upper front unless explicitly specified",
+      "facePlanes": [
+        "Keep structural light on entity.cat"
+      ]
+    },
+    "shapeLanguage": {
+      "entityRules": {
+        "entity.cat": [
+          "preserve cat identity",
+          "avoid unrequested substitutions"
+        ]
+      }
+    },
+    "expression": [],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 4
+    },
+    "renderingGrammar": {
+      "name": "watercolor",
+      "actions": [
+        "faithful visible forms",
+        "selective detail",
+        "no unrequested embellishment"
+      ]
+    },
+    "sceneCredibility": {
+      "functionalDetails": [
+        "Preserve visible contact, support and use relationships."
+      ],
+      "culturalAnchors": [],
+      "usageTraces": [
+        "Do not add generic decorative background detail."
+      ]
+    },
+    "controlledFreedom": [],
+    "decisions": [
+      {
+        "target": "entity.cat",
+        "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+        "affectedNodes": [
+          "entity.cat"
+        ],
+        "priority": 1,
+        "degradable": false,
+        "source": "profile:default"
+      },
+      {
+        "target": "background",
+        "reason": "Limit background detail to protect semantic readability.",
+        "affectedNodes": [],
+        "priority": 0.7,
+        "degradable": true,
+        "source": "capability:image-cli"
+      }
+    ]
+  },
+  "renderIntent": {
+    "kind": "vast.render-intent",
+    "schemaVersion": "2.2.1",
+    "prompt": "Scene: 安静的日常室内场景 Render 橘猫 as cat; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Protect the primary subject while preserving the user's hard constraints. No evaluator, test, score, case, or report metadata in renderer input.",
+    "positiveInstructions": [
+      "Scene: 安静的日常室内场景",
+      "Render 橘猫 as cat; preserve identity and affordances.",
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact.",
+      "faithful visible forms",
+      "selective detail",
+      "no unrequested embellishment",
+      "Visual thesis: Protect the primary subject while preserving the user's hard constraints."
+    ],
+    "negativeConstraints": [
+      "No evaluator, test, score, case, or report metadata in renderer input."
+    ],
+    "entityMappings": [
+      {
+        "entityId": "entity.cat",
+        "instruction": "Render 橘猫 as cat; preserve identity and affordances."
+      }
+    ],
+    "composition": {
+      "negativeSpace": 0.2,
+      "focalPath": [
+        "entity.cat"
+      ],
+      "protectedRegions": [
+        "entity.cat"
+      ]
+    },
+    "physics": [
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact."
+    ],
+    "lighting": [
+      "soft directional key",
+      "from upper front unless explicitly specified",
+      "Keep structural light on entity.cat"
+    ],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 4
+    },
+    "staging": {
+      "level": "single_pass",
+      "stages": [
+        {
+          "stage": 1,
+          "focus": [
+            "composition",
+            "entities",
+            "constraints",
+            "style"
+          ],
+          "locked": [
+            "hard items"
+          ]
+        }
+      ]
+    },
+    "softItems": [],
+    "hardItems": [
+      "required entity: 橘猫"
+    ],
+    "outputModality": "image",
+    "provenance": {
+      "contractHash": "ea883112e006fa8c8915f99c1fdd554b1e6eb5b9ee8f697c96cbd2c13acc2f2d",
+      "aestheticPlanHash": "c6bd5cb5c617a3c1c5b55912556b6b5bb4e9a712d1da1f1aa269f7fdfee628a8",
+      "intentHash": "req_d405a314186d9aff"
+    }
+  },
+  "adapter": {
+    "id": "image-cli",
+    "version": "image-cli",
+    "textToImage": true,
+    "imageToImage": true,
+    "references": true,
+    "masks": false,
+    "staging": false,
+    "aspectRatios": [
+      "square",
+      "landscape",
+      "portrait"
+    ],
+    "qualityModes": [
+      "medium"
+    ]
+  },
+  "render": {
+    "success": false,
+    "adapterId": "image-cli",
+    "modality": "text",
+    "inputImageCount": 0,
+    "model": "gpt-image-2-medium",
+    "provider": "openai-codex",
+    "metadata": {
+      "stderr": "",
+      "cli": {
+        "success": false,
+        "image": null,
+        "error": "Could not save image to cache: [Errno 13] Permission denied: 'D:\\\\hermes\\\\hermes-home\\\\cache\\\\images\\\\openai_codex_gpt-image-2-medium_20260829_164902_99586bb0.png'",
+        "error_type": "io_error",
+        "model": "gpt-image-2-medium",
+        "prompt": "Scene: 安静的日常室内场景 Render 橘猫 as cat; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Protect the primary subject while preserving the user's hard constraints. No evaluator, test, score, case, or report metadata in renderer input.",
+        "aspect_ratio": "square",
+        "provider": "openai-codex"
+      }
+    },
+    "error": {
+      "code": "IMAGE_CLI_IO_ERROR",
+      "message": "Could not save image to cache: [Errno 13] Permission denied: 'D:\\\\hermes\\\\hermes-home\\\\cache\\\\images\\\\openai_codex_gpt-image-2-medium_20260829_164902_99586bb0.png'"
+    }
+  },
+  "revisions": [],
+  "evaluation": {
+    "schemaVersion": "2.2.1",
+    "runId": "run_1787993342480_1bac4302",
+    "status": "FAIL",
+    "scores": {
+      "Constraint Fidelity": 0,
+      "Narrative Readability": 0,
+      "Pose Dynamics": 0,
+      "Physical Coherence": 0,
+      "Composition": 0,
+      "Rendering Grammar": 0,
+      "Information Budget Compliance": 0
+    },
+    "defects": [
+      {
+        "id": "defect.render-failed",
+        "dimension": "Constraint Fidelity",
+        "observation": "Could not save image to cache: [Errno 13] Permission denied: 'D:\\\\hermes\\\\hermes-home\\\\cache\\\\images\\\\openai_codex_gpt-image-2-medium_20260829_164902_99586bb0.png'",
+        "severity": "high",
+        "confidence": 1,
+        "violatedNode": "render.result",
+        "patch": {
+          "id": "patch.retry-render",
+          "operations": [],
+          "targetDefects": [
+            "defect.render-failed"
+          ],
+          "rationale": "Renderer failure is not a semantic revision.",
+          "round": 1
+        }
+      }
+    ],
+    "evidence": [],
+    "humanReviewRequired": false
+  }
+}

@@ -1,0 +1,5 @@
+# Load VAST as a normal DSH/Cordis bundle. The package root exports the
+# name/inject/apply entrypoint and registers four definitions on ctx.tools.
+- insert:
+    - id: vast-cli-plugin
+      name: vast-cli-plugin

@@ -1,0 +1,13 @@
+{
+  "status": "NOT_PROVEN",
+  "method": "structural proxy only",
+  "variants": [
+    "full",
+    "without-face-identity",
+    "without-motion-physics",
+    "without-information-budget",
+    "without-profile",
+    "compiler-only"
+  ],
+  "note": "Visual superiority requires live image scoring and is not claimed by mock evidence."
+}

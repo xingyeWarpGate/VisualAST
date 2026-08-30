@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "2.2.1",
+  "generatedAt": "2026-08-29T10:05:00.108Z",
+  "suites": {
+    "unit": "NOT_VERIFIED",
+    "semantic": "PASS",
+    "metamorphic": "PASS",
+    "holdout": "NOT_RUN",
+    "regression": "PASS",
+    "adapter": "PASS",
+    "live-render": "NOT_RUN"
+  }
+}

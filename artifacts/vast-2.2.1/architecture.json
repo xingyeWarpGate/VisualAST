@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "2.2.1",
+  "direction": [
+    "schema -> core/runtime/aesthetic/compiler/adapters/evaluator",
+    "orchestrator -> all"
+  ],
+  "prohibited": [
+    "core -> runtime",
+    "core -> adapters",
+    "adapters -> evaluator",
+    "runtime -> tests",
+    "production -> fixtures"
+  ]
+}

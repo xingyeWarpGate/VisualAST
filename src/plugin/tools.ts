@@ -10,7 +10,7 @@ export type AgentTools = {
   'vast.explain_diagnostic': AgentTool;
 };
 
-const envelope = <T>(kind: string, data: T): Envelope<T> => ({ vastVersion: '2.0.2', schemaVersion: '1', kind, data });
+const envelope = <T>(kind: string, data: T): Envelope<T> => ({ vastVersion: '2.2.1', schemaVersion: '2.2.1', kind, data });
 const objectInput = (value: unknown): Record<string, unknown> => { if (!value || typeof value !== 'object' || Array.isArray(value)) throw new TypeError('Tool input must be an object'); return value as Record<string, unknown>; };
 
 export function createAgentTools(application: VastApplication): AgentTools {

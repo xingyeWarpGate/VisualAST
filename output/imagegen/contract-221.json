@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "2.2.1",
+  "requestId": "req_d502b0221bac4302",
+  "sceneIdentity": "安静的日常室内场景",
+  "entities": [
+    {
+      "id": "entity.cat",
+      "type": "cat",
+      "label": "橘猫",
+      "identityLock": true,
+      "affordances": [],
+      "source": "user"
+    }
+  ],
+  "relations": [],
+  "events": [],
+  "presence": [
+    {
+      "targetId": "entity.cat",
+      "presence": "required",
+      "source": "user"
+    }
+  ],
+  "identityInvariants": [
+    {
+      "targetId": "entity.cat",
+      "invariants": [
+        "cat",
+        "橘猫"
+      ]
+    }
+  ],
+  "spatialInvariants": [],
+  "scaleRelations": [],
+  "narrativeWeights": {
+    "entity.cat": 1
+  },
+  "saliencyWeights": {
+    "entity.cat": 1
+  },
+  "semanticOpenness": [],
+  "stylePreferences": [
+    {
+      "style": "watercolor",
+      "source": "user"
+    }
+  ],
+  "forbiddenOutcomes": [],
+  "freedomSlots": [],
+  "assumptions": [
+    {
+      "id": "assumption.output-modality",
+      "statement": "Output modality defaults to image",
+      "rationale": "Renderer-neutral visual requests default to image output.",
+      "confidence": 0.95,
+      "accepted": true
+    }
+  ],
+  "unresolvedAmbiguities": [],
+  "composition": {
+    "negativeSpace": 0.2
+  },
+  "palette": [],
+  "explicitPose": {},
+  "explicitGaze": {},
+  "outputModality": "image"
+}

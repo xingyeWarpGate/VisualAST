@@ -1,7 +1,7 @@
 {
   "name": "vast-cli-plugin",
   "version": "0.1.0",
-  "description": "VAST Core 2.0.2 headless visual compiler CLI and Agent Plugin",
+  "description": "VAST 2.2.1 typed visual compiler CLI and Agent Plugin",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,18 +13,26 @@
     "./plugin": "./dist/plugin/tools.js",
     "./plugin/dsh": "./dist/plugin/dsh/index.js"
   },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
   "files": [
     "dist",
     "fixtures",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "cordis.patch.yml"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "node --import tsx --test tests/**/*.test.ts",
     "clean": "node scripts/clean-dist.mjs",
     "build": "npm run clean && tsc",
-    "regression": "tsx src/regression/runner.ts",
+    "regression": "npm run build && node dist/regression/runner.js",
+    "doctor": "npm run build && node dist/cli/main.js doctor --json",
+    "test:221": "npm run build && node --test tests-221/core.test.mjs",
     "smoke": "npm run build && node dist/cli/main.js version"
   },
   "engines": {

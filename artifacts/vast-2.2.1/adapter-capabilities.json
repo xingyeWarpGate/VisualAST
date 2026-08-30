@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "2.2.1",
+  "adapters": [
+    {
+      "id": "mock",
+      "structuralOnly": true
+    },
+    {
+      "id": "image-cli",
+      "provider": "openai-codex",
+      "model": "gpt-image-2-medium",
+      "quality": "medium",
+      "capabilities": [
+        "text-to-image",
+        "image-edit",
+        "references"
+      ]
+    }
+  ]
+}

@@ -37,11 +37,11 @@ test('Plugin RenderIntent excludes guard and test metadata', async () => {
   assert.equal((result.data as { kind: string }).kind, 'vast.render-intent');
 });
 
-test('DSH adapter uses the current Cordis provide surface', () => {
-  let provided: { name?: string; value?: unknown } = {};
-  applyDsh({ provide(name, value) { provided = { name, value }; } });
-  assert.equal(provided.name, 'vastAgentTools');
-  assert.deepEqual(toolNames(provided.value as ReturnType<typeof createAgentTools>).sort(), ['vast.compile_intent', 'vast.explain_diagnostic', 'vast.inspect_intent', 'vast.validate_ast']);
+test('DSH adapter registers definitions through the real ToolRuntime surface', () => {
+  const definitions: Array<{ name: string; parameters: Record<string, unknown>; output: { schema: Record<string, unknown>; render: (args: unknown, value: unknown) => unknown }; execute: (args: unknown, exec: { signal: AbortSignal }) => Promise<unknown> }> = [];
+  applyDsh({ tools: { register(definition) { definitions.push(definition); return () => undefined; } } });
+  assert.deepEqual(definitions.map((x) => x.name).sort(), ['vast.compile_intent', 'vast.explain_diagnostic', 'vast.inspect_intent', 'vast.validate_ast']);
+  assert.equal(definitions.every((x) => x.parameters.type === 'object' && x.output.schema.type === 'object'), true);
 });
 
 test('Package root exposes the DSH plugin entrypoint', () => {

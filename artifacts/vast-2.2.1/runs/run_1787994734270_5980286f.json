@@ -1,0 +1,236 @@
+{
+  "runId": "run_1787994734270_5980286f",
+  "createdAt": "2026-08-29T09:12:14.270Z",
+  "input": "a simple abstract shape",
+  "contract": {
+    "schemaVersion": "2.2.1",
+    "requestId": "req_8d318b1b5980286f",
+    "sceneIdentity": "安静的日常室内场景",
+    "entities": [],
+    "relations": [],
+    "events": [],
+    "attributes": {},
+    "states": [],
+    "counts": [],
+    "motions": [],
+    "presence": [],
+    "identityInvariants": [],
+    "spatialInvariants": [],
+    "scaleRelations": [],
+    "narrativeWeights": {},
+    "saliencyWeights": {},
+    "narrativeProps": [],
+    "semanticOpenness": [],
+    "stylePreferences": [],
+    "forbiddenOutcomes": [],
+    "freedomSlots": [],
+    "assumptions": [
+      {
+        "id": "assumption.output-modality",
+        "statement": "Output modality defaults to image",
+        "rationale": "Renderer-neutral visual requests default to image output.",
+        "confidence": 0.95,
+        "accepted": true
+      }
+    ],
+    "unresolvedAmbiguities": [],
+    "composition": {
+      "negativeSpace": 0.2
+    },
+    "palette": [],
+    "explicitPose": {},
+    "explicitGaze": {},
+    "outputModality": "image"
+  },
+  "aestheticPlan": {
+    "schemaVersion": "2.2.1",
+    "visualThesis": "Keep the scene legible while preserving the user's hard constraints.",
+    "focalHierarchy": [],
+    "composition": {
+      "negativeSpace": 0.2,
+      "focalPath": [],
+      "protectedRegions": []
+    },
+    "poseDynamics": {
+      "directives": [
+        "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+      ],
+      "gravity": [
+        "All hanging, liquid and fabric elements follow gravity."
+      ],
+      "inertia": [
+        "Motion direction is coherent with body momentum and contact."
+      ]
+    },
+    "formLighting": {
+      "source": "soft directional key",
+      "direction": "from upper front unless explicitly specified",
+      "facePlanes": []
+    },
+    "shapeLanguage": {
+      "entityRules": {}
+    },
+    "expression": [],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 3
+    },
+    "renderingGrammar": {
+      "name": "neutral",
+      "actions": [
+        "faithful visible forms",
+        "selective detail",
+        "no unrequested embellishment"
+      ]
+    },
+    "sceneCredibility": {
+      "functionalDetails": [
+        "Preserve visible contact, support and use relationships."
+      ],
+      "culturalAnchors": [],
+      "usageTraces": [
+        "Do not add generic decorative background detail."
+      ]
+    },
+    "controlledFreedom": [],
+    "decisions": [
+      {
+        "target": "scene",
+        "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+        "affectedNodes": [],
+        "priority": 1,
+        "degradable": false,
+        "source": "profile:default"
+      },
+      {
+        "target": "background",
+        "reason": "Limit background detail to protect semantic readability.",
+        "affectedNodes": [],
+        "priority": 0.7,
+        "degradable": true,
+        "source": "capability:mock"
+      }
+    ]
+  },
+  "renderIntent": {
+    "kind": "vast.render-intent",
+    "schemaVersion": "2.2.1",
+    "prompt": "Scene: 安静的日常室内场景 All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Keep the scene legible while preserving the user's hard constraints.",
+    "positiveInstructions": [
+      "Scene: 安静的日常室内场景",
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact.",
+      "faithful visible forms",
+      "selective detail",
+      "no unrequested embellishment",
+      "Visual thesis: Keep the scene legible while preserving the user's hard constraints."
+    ],
+    "negativeConstraints": [],
+    "entityMappings": [],
+    "composition": {
+      "negativeSpace": 0.2,
+      "focalPath": [],
+      "protectedRegions": []
+    },
+    "physics": [
+      "All hanging, liquid and fabric elements follow gravity.",
+      "Motion direction is coherent with body momentum and contact."
+    ],
+    "lighting": [
+      "soft directional key",
+      "from upper front unless explicitly specified"
+    ],
+    "informationBudget": {
+      "foreground": 0.7,
+      "midground": 0.45,
+      "background": 0.2,
+      "texture": 0.2,
+      "estimatedConcepts": 3
+    },
+    "staging": {
+      "level": "single_pass",
+      "stages": [
+        {
+          "stage": 1,
+          "focus": [
+            "composition",
+            "entities",
+            "constraints",
+            "style"
+          ],
+          "locked": [
+            "hard items"
+          ]
+        }
+      ]
+    },
+    "softItems": [],
+    "hardItems": [],
+    "outputModality": "image",
+    "provenance": {
+      "contractHash": "d43a613bd099adcdc40c8c38bd949499508039844e68fe81099e23084425ce3e",
+      "aestheticPlanHash": "38d9b5b8e70d324d3a5661c2558fe81d1dcee9952d66525fc58a645179c327f7",
+      "intentHash": "req_418ed69fb944b6ac"
+    }
+  },
+  "adapter": {
+    "id": "mock",
+    "version": "1.0.0",
+    "textToImage": true,
+    "imageToImage": true,
+    "references": true,
+    "masks": false,
+    "staging": true,
+    "aspectRatios": [
+      "square",
+      "landscape",
+      "portrait"
+    ],
+    "qualityModes": [
+      "medium"
+    ]
+  },
+  "render": {
+    "success": true,
+    "adapterId": "mock",
+    "imagePath": "D:\\VisualAST\\artifacts\\vast-2.2.1\\images\\mock-1787994734268.png",
+    "modality": "text",
+    "inputImageCount": 0,
+    "provider": "mock",
+    "model": "structural-test",
+    "metadata": {
+      "request": {
+        "adapterId": "mock",
+        "prompt": "[redacted in mock evidence]",
+        "negativePrompt": "",
+        "inputImages": [],
+        "metadata": {
+          "staged": "single_pass"
+        }
+      }
+    }
+  },
+  "revisions": [],
+  "evaluation": {
+    "schemaVersion": "2.2.1",
+    "runId": "run_1787994734270_5980286f",
+    "status": "PASS",
+    "scores": {
+      "Constraint Fidelity": 1,
+      "Narrative Readability": 1,
+      "Pose Dynamics": 1,
+      "Physical Coherence": 1,
+      "Composition": 1,
+      "Rendering Grammar": 1,
+      "Information Budget Compliance": 1
+    },
+    "defects": [],
+    "evidence": [
+      "image:D:\\VisualAST\\artifacts\\vast-2.2.1\\images\\mock-1787994734268.png"
+    ],
+    "humanReviewRequired": true
+  }
+}

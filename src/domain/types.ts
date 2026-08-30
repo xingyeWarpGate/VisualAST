@@ -1,5 +1,5 @@
-export const VAST_VERSION = '2.0.2' as const;
-export const SCHEMA_VERSION = '1' as const;
+export const VAST_VERSION = '2.2.1' as const;
+export const SCHEMA_VERSION = '2.2.1' as const;
 
 export type Envelope<T> = {
   vastVersion: typeof VAST_VERSION;
@@ -246,3 +246,77 @@ export type RegressionRequest = { caseId?: string; layer?: string };
 export type RegressionCaseResult = { caseId: string; status: 'PASS' | 'FAIL'; checks: number; diagnostics: Diagnostic[] };
 export type RegressionResponse = { status: 'PASS' | 'FAIL'; total: number; passed: number; cases: RegressionCaseResult[] };
 export type DiagnosticHelp = { code: IntentDiagnostic; summary: string; action: string; severity: IssueSeverity };
+
+// VAST 2.2.1 versioned cross-module model. The legacy DTOs above remain
+// source-compatible for migration inputs, but new orchestration uses these
+// types exclusively between Runtime, Core, Aesthetic, Compiler and Adapters.
+export type TextSpan = { start: number; end: number; text: string };
+export type OperationProvenance =
+  | { kind: 'explicit_user'; span: TextSpan }
+  | { kind: 'safe_inference'; rationale: string }
+  | { kind: 'policy_default'; policyId: string }
+  | { kind: 'aesthetic_choice'; plannerId: string };
+export type Ambiguity = { id: string; question: string; candidates: string[]; confidence: number; affectedNodes: string[] };
+export type Assumption = { id: string; statement: string; rationale: string; confidence: number };
+export type SourceEvidence = { operationId: string; provenance: OperationProvenance };
+export type WeightMap = Record<string, number>;
+
+export type TypedOperation =
+  | { kind: 'declare_entity'; id: string; entityType: string; label: string; presence: Presence; identityLock: boolean; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_attribute'; targetId: string; attribute: string; value: string; hard: boolean; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_relation'; id: string; relation: string; subject: string; object: string; hard: boolean; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_event'; id: string; event: string; participants: string[]; consequences: string[]; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_motion'; id: string; targetId: string; motion: string; direction?: string; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_emotion'; targetId: string; emotion: string; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_presence'; targetId: string; presence: Presence; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_saliency'; targetId: string; semantic: number; visual: number; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_openness'; targetId: string; specificity: 'low' | 'medium' | 'high'; categoryLock: string; forbiddenNarrowing: string[]; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_style_preference'; style: string; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_forbidden'; target: string; provenance: OperationProvenance; confidence: number }
+  | { kind: 'declare_freedom_slot'; id: string; area: string; allowed: string[]; provenance: OperationProvenance; confidence: number };
+export type SemanticProposal = { schemaVersion: '2.2.1'; operations: TypedOperation[]; ambiguities: Ambiguity[]; assumptions: Assumption[]; sourceEvidence: SourceEvidence[]; confidence: number; sourceText?: string };
+
+export type EntityNode = { id: string; type: string; label: string; identityLock: boolean; affordances: string[]; source: 'user' | 'runtime' };
+export type RelationNode = { id: string; type: string; subject: string; object: string; hard: boolean };
+export type EventNode = { id: string; type: string; participants: string[]; consequences: string[] };
+export type PresenceConstraint = { targetId: string; presence: Presence; source: 'user' | 'runtime' };
+export type IdentityInvariant = { targetId: string; invariants: string[] };
+export type SpatialInvariant = { id: string; statement: string; hard: boolean };
+export type ScaleRelation = { a: string; b: string; ratio: string; tolerance: number };
+export type OpennessConstraint = { targetId: string; specificity: 'low' | 'medium' | 'high'; categoryLock: string; forbiddenNarrowing: string[] };
+export type StylePreference = { style: string; source: 'user' | 'runtime' };
+export type ForbiddenOutcome = { target: string; reason?: string };
+export type FreedomSlot = { id: string; area: string; allowed: string[] };
+export type AcceptedAssumption = Assumption & { accepted: true };
+export type CanonicalSceneContract = {
+  schemaVersion: '2.2.1'; requestId: string; sceneIdentity?: string; entities: EntityNode[]; attributes: Record<string, Record<string, string>>; states: Array<{ id: string; subjectId?: string; value: string; visibleConsequences: string[] }>; counts: Array<{ targetId: string; expected: number; tolerance: number; mode: 'exact' | 'range' }>; motions: Array<{ id: string; targetId: string; content: string; direction?: string; intensity?: number }>; relations: RelationNode[]; events: EventNode[];
+  presence: PresenceConstraint[]; identityInvariants: IdentityInvariant[]; spatialInvariants: SpatialInvariant[]; scaleRelations: ScaleRelation[];
+  narrativeWeights: WeightMap; saliencyWeights: WeightMap; narrativeProps: Array<{ id: string; entityId: string; causalRole?: string }>;  semanticOpenness: OpennessConstraint[]; stylePreferences: StylePreference[];
+  forbiddenOutcomes: ForbiddenOutcome[]; freedomSlots: FreedomSlot[]; assumptions: AcceptedAssumption[]; unresolvedAmbiguities: Ambiguity[];
+  composition: CompositionSpec; palette: string[]; explicitPose: Record<string, string>; explicitGaze: Record<string, string>; outputModality: string;
+};
+export type FocalTarget = { targetId: string; rank: number; semanticWeight: number; visualWeight: number; detailBudget: number };
+export type CompositionPlan = CompositionSpec & { focalPath: string[]; protectedRegions: string[] };
+export type PoseDynamicsPlan = { directives: string[]; gravity: string[]; inertia: string[] };
+export type FormLightingPlan = { source: string; direction: string; facePlanes: string[]; edgeLight?: string };
+export type ShapeLanguagePlan = { entityRules: Record<string, string[]> };
+export type FaceIdentityPlan = { targetId: string; contour: string; eyeShape: string; browEyeAxis: string; noseMouth: string; asymmetry: string; recognitionPoint: string; expressionDeformation: string; lightStableFeature: string };
+export type ExpressionPlan = { targetId: string; emotion: string; visibleDeformation: string };
+export type InformationBudget = { foreground: number; midground: number; background: number; texture: number; estimatedConcepts: number };
+export type RenderingGrammarPlan = RenderingGrammar;
+export type SceneCredibilityPlan = { functionalDetails: string[]; culturalAnchors: string[]; usageTraces: string[] };
+export type FreedomAllocation = { area: string; allowed: string[]; budget: number };
+export type AestheticDecision = { target: string; reason: string; affectedNodes: string[]; priority: number; degradable: boolean; source: string };
+export type AestheticPlan = { schemaVersion: '2.2.1'; visualThesis: string; focalHierarchy: FocalTarget[]; composition: CompositionPlan; poseDynamics: PoseDynamicsPlan; formLighting: FormLightingPlan; shapeLanguage: ShapeLanguagePlan; faceIdentity?: FaceIdentityPlan; expression: ExpressionPlan[]; informationBudget: InformationBudget; renderingGrammar: RenderingGrammarPlan; sceneCredibility: SceneCredibilityPlan; controlledFreedom: FreedomAllocation[]; decisions: AestheticDecision[] };
+export type AttentionBudget = { entityCount: number; hardConstraintCount: number; relationCount: number; highPrecisionRegions: number; physicsEvents: number; lightSources: number; textBrandRequirements: number; styleRequirements: number; negativeConstraints: number; estimatedConceptDensity: number };
+export type ComplexityLevel = 'single_pass' | 'staged_recommended' | 'staged_required' | 'unsupported';
+export type StagePlan = { level: ComplexityLevel; stages: Array<{ stage: number; focus: string[]; locked: string[] }> };
+export type RenderIntent221 = { kind: 'vast.render-intent'; schemaVersion: '2.2.1'; prompt: string; positiveInstructions: string[]; negativeConstraints: string[]; entityMappings: Array<{ entityId: string; instruction: string }>; composition: CompositionPlan; physics: string[]; lighting: string[]; informationBudget: InformationBudget; staging: StagePlan; softItems: string[]; hardItems: string[]; compressionAudit: { removed: string[]; merged: string[]; downgraded: string[] }; outputModality: string; provenance: { contractHash: string; aestheticPlanHash: string; intentHash?: string } };
+export type RendererCapabilities = { id: string; version: string; textToImage: boolean; imageToImage: boolean; references: boolean; masks: boolean; staging: boolean; aspectRatios: string[]; qualityModes: string[] };
+export type AdapterRequest = { adapterId: string; prompt: string; negativePrompt?: string; inputImages: string[]; aspectRatio?: string; quality?: string; metadata: Record<string, unknown> };
+export type RenderResult = { success: boolean; adapterId: string; imagePath?: string; modality: 'text' | 'image'; inputImageCount: number; model?: string; provider?: string; metadata: Record<string, unknown>; error?: { code: string; message: string } };
+export type RendererAdapter = { id: string; capabilities(): RendererCapabilities; lower(intent: RenderIntent221): AdapterRequest; validateRequest(request: AdapterRequest): ValidationResult; render(request: AdapterRequest): Promise<RenderResult> };
+export type EvaluationDefect = { id: string; dimension: string; region?: string; entityId?: string; observation: string; severity: 'low' | 'medium' | 'high'; confidence: number; violatedNode: string; patch: RevisionPatch };
+export type EvaluationResult = { schemaVersion: '2.2.1'; runId: string; status: 'PASS' | 'FAIL'; scores: Record<string, number>; defects: EvaluationDefect[]; evidence: string[]; humanReviewRequired: boolean };
+export type RevisionPatch = { id: string; operations: TypedOperation[]; targetDefects: string[]; rationale: string; round: number };
+export type RunRecord = { runId: string; createdAt: string; input: string; contract: CanonicalSceneContract; aestheticPlan: AestheticPlan; renderIntent: RenderIntent221; adapter: RendererCapabilities; render?: RenderResult; evaluation?: EvaluationResult; revisions: RevisionPatch[] };

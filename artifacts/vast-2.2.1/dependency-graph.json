@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "2.2.1",
+  "nodes": [
+    "schema",
+    "core",
+    "runtime",
+    "aesthetic",
+    "compiler",
+    "adapters",
+    "evaluator",
+    "orchestrator"
+  ],
+  "edges": [
+    [
+      "schema",
+      "core"
+    ],
+    [
+      "schema",
+      "runtime"
+    ],
+    [
+      "schema",
+      "aesthetic"
+    ],
+    [
+      "schema",
+      "compiler"
+    ],
+    [
+      "schema",
+      "adapters"
+    ],
+    [
+      "schema",
+      "evaluator"
+    ],
+    [
+      "orchestrator",
+      "core"
+    ],
+    [
+      "orchestrator",
+      "runtime"
+    ],
+    [
+      "orchestrator",
+      "aesthetic"
+    ],
+    [
+      "orchestrator",
+      "compiler"
+    ],
+    [
+      "orchestrator",
+      "adapters"
+    ],
+    [
+      "orchestrator",
+      "evaluator"
+    ]
+  ]
+}

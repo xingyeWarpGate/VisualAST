@@ -1,0 +1,3372 @@
+{
+  "generatedAt": "2026-08-29T10:02:39.872Z",
+  "cases": [
+    {
+      "id": "case-a",
+      "title": "雨夜修车巷",
+      "intent": "雨夜霓虹灯下的老式自行车修理巷，一位穿黄色雨衣的修理师蹲在红色自行车旁，湿地反射蓝紫灯光，电影感横向构图，禁止文字和汽车。",
+      "image": "/images/case-a.png",
+      "semanticProposal": {
+        "schemaVersion": "2.2.1",
+        "operations": [
+          {
+            "kind": "declare_entity",
+            "id": "entity.bicycle",
+            "entityType": "bicycle",
+            "label": "自行车",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 9,
+                "end": 12,
+                "text": "自行车"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_saliency",
+            "targetId": "entity.bicycle",
+            "semantic": 1,
+            "visual": 1,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 9,
+                "end": 12,
+                "text": "自行车"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.mechanic",
+            "entityType": "mechanic",
+            "label": "修理师",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 24,
+                "end": 27,
+                "text": "修理师"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.文字",
+            "entityType": "文字",
+            "label": "文字",
+            "presence": "forbidden",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 55,
+                "end": 57,
+                "text": "文字"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.汽车",
+            "entityType": "汽车",
+            "label": "汽车",
+            "presence": "forbidden",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 58,
+                "end": 60,
+                "text": "汽车"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_style_preference",
+            "style": "cinematic",
+            "provenance": {
+              "kind": "safe_inference",
+              "rationale": "normalized from explicit source text as cinematic"
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_forbidden",
+            "target": "文字",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 55,
+                "end": 57,
+                "text": "文字"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_forbidden",
+            "target": "汽车",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 58,
+                "end": 60,
+                "text": "汽车"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "identity",
+            "value": "雨夜霓虹灯下的老式自行车修理巷，一位穿黄色雨衣的修理师蹲在红色自行车旁，湿地反射蓝紫灯光，电影感横向构图，禁止文字和汽车。",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 0,
+                "end": 61,
+                "text": "雨夜霓虹灯下的老式自行车修理巷，一位穿黄色雨衣的修理师蹲在红色自行车旁，湿地反射蓝紫灯光，电影感横向构图，禁止文字和汽车。"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "黄",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 19,
+                "end": 20,
+                "text": "黄"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "红",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 29,
+                "end": 30,
+                "text": "红"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "蓝",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 40,
+                "end": 41,
+                "text": "蓝"
+              }
+            },
+            "confidence": 1
+          }
+        ],
+        "ambiguities": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95
+          }
+        ],
+        "sourceEvidence": [
+          {
+            "operationId": "entity.bicycle",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 9,
+                "end": 12,
+                "text": "自行车"
+              }
+            }
+          },
+          {
+            "operationId": "entity.mechanic",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 24,
+                "end": 27,
+                "text": "修理师"
+              }
+            }
+          },
+          {
+            "operationId": "entity.文字",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 55,
+                "end": 57,
+                "text": "文字"
+              }
+            }
+          },
+          {
+            "operationId": "entity.汽车",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 58,
+                "end": 60,
+                "text": "汽车"
+              }
+            }
+          }
+        ],
+        "confidence": 1,
+        "sourceText": "雨夜霓虹灯下的老式自行车修理巷，一位穿黄色雨衣的修理师蹲在红色自行车旁，湿地反射蓝紫灯光，电影感横向构图，禁止文字和汽车。"
+      },
+      "contract": {
+        "schemaVersion": "2.2.1",
+        "requestId": "req_3b15b03bd27800f5",
+        "sceneIdentity": "雨夜霓虹灯下的老式自行车修理巷，一位穿黄色雨衣的修理师蹲在红色自行车旁，湿地反射蓝紫灯光，电影感横向构图，禁止文字和汽车。",
+        "entities": [
+          {
+            "id": "entity.bicycle",
+            "type": "bicycle",
+            "label": "自行车",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.mechanic",
+            "type": "mechanic",
+            "label": "修理师",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.文字",
+            "type": "文字",
+            "label": "文字",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.汽车",
+            "type": "汽车",
+            "label": "汽车",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          }
+        ],
+        "attributes": {
+          "scene": {
+            "identity": "雨夜霓虹灯下的老式自行车修理巷，一位穿黄色雨衣的修理师蹲在红色自行车旁，湿地反射蓝紫灯光，电影感横向构图，禁止文字和汽车。",
+            "palette": "蓝"
+          }
+        },
+        "states": [],
+        "counts": [],
+        "motions": [],
+        "relations": [],
+        "events": [],
+        "presence": [
+          {
+            "targetId": "entity.bicycle",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.mechanic",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.文字",
+            "presence": "forbidden",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.汽车",
+            "presence": "forbidden",
+            "source": "user"
+          }
+        ],
+        "identityInvariants": [
+          {
+            "targetId": "entity.bicycle",
+            "invariants": [
+              "bicycle",
+              "自行车"
+            ]
+          },
+          {
+            "targetId": "entity.mechanic",
+            "invariants": [
+              "mechanic",
+              "修理师"
+            ]
+          },
+          {
+            "targetId": "entity.文字",
+            "invariants": [
+              "文字",
+              "文字"
+            ]
+          },
+          {
+            "targetId": "entity.汽车",
+            "invariants": [
+              "汽车",
+              "汽车"
+            ]
+          }
+        ],
+        "spatialInvariants": [],
+        "scaleRelations": [],
+        "narrativeWeights": {
+          "entity.bicycle": 1,
+          "entity.mechanic": 0.7000000000000001,
+          "entity.文字": 0.6000000000000001,
+          "entity.汽车": 0.5
+        },
+        "saliencyWeights": {
+          "entity.bicycle": 1
+        },
+        "narrativeProps": [],
+        "semanticOpenness": [],
+        "stylePreferences": [
+          {
+            "style": "cinematic",
+            "source": "runtime"
+          }
+        ],
+        "forbiddenOutcomes": [
+          {
+            "target": "文字"
+          },
+          {
+            "target": "汽车"
+          }
+        ],
+        "freedomSlots": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95,
+            "accepted": true
+          }
+        ],
+        "unresolvedAmbiguities": [],
+        "composition": {
+          "framing": "landscape"
+        },
+        "palette": [
+          "黄",
+          "红",
+          "蓝"
+        ],
+        "explicitPose": {},
+        "explicitGaze": {},
+        "outputModality": "image"
+      },
+      "aestheticPlan": {
+        "schemaVersion": "2.2.1",
+        "visualThesis": "Protect the primary subject while preserving the user's hard constraints.",
+        "focalHierarchy": [
+          {
+            "targetId": "entity.bicycle",
+            "rank": 1,
+            "semanticWeight": 1,
+            "visualWeight": 1,
+            "detailBudget": 0.9
+          },
+          {
+            "targetId": "entity.mechanic",
+            "rank": 2,
+            "semanticWeight": 0.7000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          }
+        ],
+        "composition": {
+          "framing": "landscape",
+          "focalPath": [
+            "entity.bicycle",
+            "entity.mechanic"
+          ],
+          "protectedRegions": [
+            "entity.bicycle",
+            "entity.mechanic"
+          ]
+        },
+        "poseDynamics": {
+          "directives": [
+            "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+          ],
+          "gravity": [
+            "All hanging, liquid and fabric elements follow gravity."
+          ],
+          "inertia": [
+            "Motion direction is coherent with body momentum and contact."
+          ]
+        },
+        "formLighting": {
+          "source": "soft directional key",
+          "direction": "from upper front unless explicitly specified",
+          "facePlanes": [
+            "Keep structural light on entity.bicycle"
+          ]
+        },
+        "shapeLanguage": {
+          "entityRules": {
+            "entity.bicycle": [
+              "preserve bicycle identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.mechanic": [
+              "preserve mechanic identity",
+              "avoid unrequested substitutions"
+            ]
+          }
+        },
+        "expression": [],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 5
+        },
+        "renderingGrammar": {
+          "name": "cinematic",
+          "actions": [
+            "faithful visible forms",
+            "selective detail",
+            "no unrequested embellishment"
+          ]
+        },
+        "sceneCredibility": {
+          "functionalDetails": [
+            "Preserve visible contact, support and use relationships."
+          ],
+          "culturalAnchors": [],
+          "usageTraces": [
+            "Do not add generic decorative background detail."
+          ]
+        },
+        "controlledFreedom": [],
+        "decisions": [
+          {
+            "target": "entity.bicycle",
+            "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+            "affectedNodes": [
+              "entity.bicycle"
+            ],
+            "priority": 1,
+            "degradable": false,
+            "source": "profile:default"
+          },
+          {
+            "target": "background",
+            "reason": "Limit background detail to protect semantic readability.",
+            "affectedNodes": [],
+            "priority": 0.7,
+            "degradable": true,
+            "source": "capability:mock"
+          }
+        ]
+      },
+      "renderIntent": {
+        "kind": "vast.render-intent",
+        "schemaVersion": "2.2.1",
+        "prompt": "Scene: 雨夜霓虹灯下的老式自行车修理巷，一位穿黄色雨衣的修理师蹲在红色自行车旁，湿地反射蓝紫灯光，电影感横向构图，禁止文字和汽车。 Render 自行车 as bicycle; preserve identity and affordances. Render 修理师 as mechanic; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Protect the primary subject while preserving the user's hard constraints. Do not render 文字. Do not render 汽车.",
+        "positiveInstructions": [
+          "Scene: 雨夜霓虹灯下的老式自行车修理巷，一位穿黄色雨衣的修理师蹲在红色自行车旁，湿地反射蓝紫灯光，电影感横向构图，禁止文字和汽车。",
+          "Render 自行车 as bicycle; preserve identity and affordances.",
+          "Render 修理师 as mechanic; preserve identity and affordances.",
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact.",
+          "faithful visible forms",
+          "selective detail",
+          "no unrequested embellishment",
+          "Visual thesis: Protect the primary subject while preserving the user's hard constraints."
+        ],
+        "negativeConstraints": [
+          "Do not render 文字.",
+          "Do not render 汽车."
+        ],
+        "entityMappings": [
+          {
+            "entityId": "entity.bicycle",
+            "instruction": "Render 自行车 as bicycle; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.mechanic",
+            "instruction": "Render 修理师 as mechanic; preserve identity and affordances."
+          }
+        ],
+        "composition": {
+          "framing": "landscape",
+          "focalPath": [
+            "entity.bicycle",
+            "entity.mechanic"
+          ],
+          "protectedRegions": [
+            "entity.bicycle",
+            "entity.mechanic"
+          ]
+        },
+        "physics": [
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact."
+        ],
+        "lighting": [
+          "soft directional key",
+          "from upper front unless explicitly specified",
+          "Keep structural light on entity.bicycle"
+        ],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 5
+        },
+        "staging": {
+          "level": "single_pass",
+          "stages": [
+            {
+              "stage": 1,
+              "focus": [
+                "composition",
+                "entities",
+                "constraints",
+                "style"
+              ],
+              "locked": [
+                "hard items"
+              ]
+            }
+          ]
+        },
+        "softItems": [],
+        "hardItems": [
+          "required entity: 自行车",
+          "required entity: 修理师",
+          "forbidden: 文字",
+          "forbidden: 汽车"
+        ],
+        "compressionAudit": {
+          "removed": [
+            "generic praise adjectives",
+            "duplicated low-priority style words"
+          ],
+          "merged": [
+            "entity identity and affordance instructions"
+          ],
+          "downgraded": []
+        },
+        "outputModality": "image",
+        "provenance": {
+          "contractHash": "0f6e8ee04a1194ed7f4ecc0435b2ca42c6acdbdd8abd9bd6b9b5b0e8c400d9ac",
+          "aestheticPlanHash": "37dc27fa4b3d2263d0ca23d5ba9657e4f32eb387156923cb832adcd7ecb060e4"
+        }
+      },
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 4,
+        "relationCount": 0,
+        "hardConstraintCount": 4,
+        "complexity": "single_pass"
+      },
+      "visualReview": {
+        "status": "PARTIAL_PASS",
+        "score": 0.86,
+        "observations": [
+          "yellow raincoat, red bicycle, wet neon alley and hand interaction are present",
+          "no car or readable text detected",
+          "result is photographic rather than editorial illustration"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    },
+    {
+      "id": "case-b",
+      "title": "贝壳茶会",
+      "intent": "巨大的白色海螺内部举行微型茶会，两位小旅人围着青瓷茶壶，柔和水彩，正方形构图，大面积留白，禁止现代家具。",
+      "image": "/images/case-b.png",
+      "semanticProposal": {
+        "schemaVersion": "2.2.1",
+        "operations": [
+          {
+            "kind": "declare_entity",
+            "id": "entity.traveler",
+            "entityType": "traveler",
+            "label": "旅人",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 19,
+                "end": 21,
+                "text": "旅人"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "entity.traveler",
+            "attribute": "count",
+            "value": "2",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 19,
+                "end": 21,
+                "text": "旅人"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_saliency",
+            "targetId": "entity.traveler",
+            "semantic": 1,
+            "visual": 1,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 19,
+                "end": 21,
+                "text": "旅人"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.shell",
+            "entityType": "shell",
+            "label": "海螺",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 5,
+                "end": 7,
+                "text": "海螺"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.teapot",
+            "entityType": "teapot",
+            "label": "茶壶",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 25,
+                "end": 27,
+                "text": "茶壶"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.现代家具",
+            "entityType": "现代家具",
+            "label": "现代家具",
+            "presence": "forbidden",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 47,
+                "end": 51,
+                "text": "现代家具"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_style_preference",
+            "style": "watercolor",
+            "provenance": {
+              "kind": "safe_inference",
+              "rationale": "normalized from explicit source text as watercolor"
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_forbidden",
+            "target": "现代家具",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 47,
+                "end": 51,
+                "text": "现代家具"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "identity",
+            "value": "巨大的白色海螺内部举行微型茶会，两位小旅人围着青瓷茶壶，柔和水彩，正方形构图，大面积留白，禁止现代家具。",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 0,
+                "end": 52,
+                "text": "巨大的白色海螺内部举行微型茶会，两位小旅人围着青瓷茶壶，柔和水彩，正方形构图，大面积留白，禁止现代家具。"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "白",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 3,
+                "end": 4,
+                "text": "白"
+              }
+            },
+            "confidence": 1
+          }
+        ],
+        "ambiguities": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95
+          }
+        ],
+        "sourceEvidence": [
+          {
+            "operationId": "entity.traveler",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 19,
+                "end": 21,
+                "text": "旅人"
+              }
+            }
+          },
+          {
+            "operationId": "entity.shell",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 5,
+                "end": 7,
+                "text": "海螺"
+              }
+            }
+          },
+          {
+            "operationId": "entity.teapot",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 25,
+                "end": 27,
+                "text": "茶壶"
+              }
+            }
+          },
+          {
+            "operationId": "entity.现代家具",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 47,
+                "end": 51,
+                "text": "现代家具"
+              }
+            }
+          }
+        ],
+        "confidence": 1,
+        "sourceText": "巨大的白色海螺内部举行微型茶会，两位小旅人围着青瓷茶壶，柔和水彩，正方形构图，大面积留白，禁止现代家具。"
+      },
+      "contract": {
+        "schemaVersion": "2.2.1",
+        "requestId": "req_a8789735adfc459e",
+        "sceneIdentity": "巨大的白色海螺内部举行微型茶会，两位小旅人围着青瓷茶壶，柔和水彩，正方形构图，大面积留白，禁止现代家具。",
+        "entities": [
+          {
+            "id": "entity.traveler",
+            "type": "traveler",
+            "label": "旅人",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.shell",
+            "type": "shell",
+            "label": "海螺",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.teapot",
+            "type": "teapot",
+            "label": "茶壶",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.现代家具",
+            "type": "现代家具",
+            "label": "现代家具",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          }
+        ],
+        "attributes": {
+          "entity.traveler": {
+            "count": "2"
+          },
+          "scene": {
+            "identity": "巨大的白色海螺内部举行微型茶会，两位小旅人围着青瓷茶壶，柔和水彩，正方形构图，大面积留白，禁止现代家具。",
+            "palette": "白"
+          }
+        },
+        "states": [],
+        "counts": [
+          {
+            "targetId": "entity.traveler",
+            "expected": 2,
+            "tolerance": 0,
+            "mode": "exact"
+          }
+        ],
+        "motions": [],
+        "relations": [],
+        "events": [],
+        "presence": [
+          {
+            "targetId": "entity.traveler",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.shell",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.teapot",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.现代家具",
+            "presence": "forbidden",
+            "source": "user"
+          }
+        ],
+        "identityInvariants": [
+          {
+            "targetId": "entity.traveler",
+            "invariants": [
+              "traveler",
+              "旅人"
+            ]
+          },
+          {
+            "targetId": "entity.shell",
+            "invariants": [
+              "shell",
+              "海螺"
+            ]
+          },
+          {
+            "targetId": "entity.teapot",
+            "invariants": [
+              "teapot",
+              "茶壶"
+            ]
+          },
+          {
+            "targetId": "entity.现代家具",
+            "invariants": [
+              "现代家具",
+              "现代家具"
+            ]
+          }
+        ],
+        "spatialInvariants": [],
+        "scaleRelations": [],
+        "narrativeWeights": {
+          "entity.traveler": 1,
+          "entity.shell": 0.7000000000000001,
+          "entity.teapot": 0.6000000000000001,
+          "entity.现代家具": 0.5
+        },
+        "saliencyWeights": {
+          "entity.traveler": 1
+        },
+        "narrativeProps": [],
+        "semanticOpenness": [],
+        "stylePreferences": [
+          {
+            "style": "watercolor",
+            "source": "runtime"
+          }
+        ],
+        "forbiddenOutcomes": [
+          {
+            "target": "现代家具"
+          }
+        ],
+        "freedomSlots": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95,
+            "accepted": true
+          }
+        ],
+        "unresolvedAmbiguities": [],
+        "composition": {
+          "framing": "square",
+          "negativeSpace": 0.5
+        },
+        "palette": [
+          "白"
+        ],
+        "explicitPose": {},
+        "explicitGaze": {},
+        "outputModality": "image"
+      },
+      "aestheticPlan": {
+        "schemaVersion": "2.2.1",
+        "visualThesis": "Protect the primary subject while preserving the user's hard constraints.",
+        "focalHierarchy": [
+          {
+            "targetId": "entity.traveler",
+            "rank": 1,
+            "semanticWeight": 1,
+            "visualWeight": 1,
+            "detailBudget": 0.9
+          },
+          {
+            "targetId": "entity.shell",
+            "rank": 2,
+            "semanticWeight": 0.7000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          },
+          {
+            "targetId": "entity.teapot",
+            "rank": 3,
+            "semanticWeight": 0.6000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          }
+        ],
+        "composition": {
+          "framing": "square",
+          "negativeSpace": 0.5,
+          "focalPath": [
+            "entity.traveler",
+            "entity.shell",
+            "entity.teapot"
+          ],
+          "protectedRegions": [
+            "entity.traveler",
+            "entity.shell",
+            "entity.teapot"
+          ]
+        },
+        "poseDynamics": {
+          "directives": [
+            "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+          ],
+          "gravity": [
+            "All hanging, liquid and fabric elements follow gravity."
+          ],
+          "inertia": [
+            "Motion direction is coherent with body momentum and contact."
+          ]
+        },
+        "formLighting": {
+          "source": "soft directional key",
+          "direction": "from upper front unless explicitly specified",
+          "facePlanes": [
+            "Keep structural light on entity.traveler"
+          ]
+        },
+        "shapeLanguage": {
+          "entityRules": {
+            "entity.traveler": [
+              "preserve traveler identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.shell": [
+              "preserve shell identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.teapot": [
+              "preserve teapot identity",
+              "avoid unrequested substitutions"
+            ]
+          }
+        },
+        "faceIdentity": {
+          "targetId": "entity.traveler",
+          "contour": "distinctive head-to-jaw proportion",
+          "eyeShape": "specific eye aperture rather than generic large eyes",
+          "browEyeAxis": "asymmetric brow-eye relation",
+          "noseMouth": "declared nose-mouth spacing",
+          "asymmetry": "subtle non-destructive asymmetry",
+          "recognitionPoint": "hairline or ear/side-profile cue",
+          "expressionDeformation": "expression changes eyelids, cheeks and mouth corners",
+          "lightStableFeature": "recognition point survives key light"
+        },
+        "expression": [],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 6
+        },
+        "renderingGrammar": {
+          "name": "watercolor",
+          "actions": [
+            "faithful visible forms",
+            "selective detail",
+            "no unrequested embellishment"
+          ]
+        },
+        "sceneCredibility": {
+          "functionalDetails": [
+            "Preserve visible contact, support and use relationships."
+          ],
+          "culturalAnchors": [],
+          "usageTraces": [
+            "Do not add generic decorative background detail."
+          ]
+        },
+        "controlledFreedom": [],
+        "decisions": [
+          {
+            "target": "entity.traveler",
+            "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+            "affectedNodes": [
+              "entity.traveler"
+            ],
+            "priority": 1,
+            "degradable": false,
+            "source": "profile:default"
+          },
+          {
+            "target": "background",
+            "reason": "Limit background detail to protect semantic readability.",
+            "affectedNodes": [],
+            "priority": 0.7,
+            "degradable": true,
+            "source": "capability:mock"
+          }
+        ]
+      },
+      "renderIntent": {
+        "kind": "vast.render-intent",
+        "schemaVersion": "2.2.1",
+        "prompt": "Scene: 巨大的白色海螺内部举行微型茶会，两位小旅人围着青瓷茶壶，柔和水彩，正方形构图，大面积留白，禁止现代家具。 Render 旅人 as traveler; preserve identity and affordances. Render 海螺 as shell; preserve identity and affordances. Render 茶壶 as teapot; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Protect the primary subject while preserving the user's hard constraints. Do not render 现代家具.",
+        "positiveInstructions": [
+          "Scene: 巨大的白色海螺内部举行微型茶会，两位小旅人围着青瓷茶壶，柔和水彩，正方形构图，大面积留白，禁止现代家具。",
+          "Render 旅人 as traveler; preserve identity and affordances.",
+          "Render 海螺 as shell; preserve identity and affordances.",
+          "Render 茶壶 as teapot; preserve identity and affordances.",
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact.",
+          "faithful visible forms",
+          "selective detail",
+          "no unrequested embellishment",
+          "Visual thesis: Protect the primary subject while preserving the user's hard constraints."
+        ],
+        "negativeConstraints": [
+          "Do not render 现代家具."
+        ],
+        "entityMappings": [
+          {
+            "entityId": "entity.traveler",
+            "instruction": "Render 旅人 as traveler; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.shell",
+            "instruction": "Render 海螺 as shell; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.teapot",
+            "instruction": "Render 茶壶 as teapot; preserve identity and affordances."
+          }
+        ],
+        "composition": {
+          "framing": "square",
+          "negativeSpace": 0.5,
+          "focalPath": [
+            "entity.traveler",
+            "entity.shell",
+            "entity.teapot"
+          ],
+          "protectedRegions": [
+            "entity.traveler",
+            "entity.shell",
+            "entity.teapot"
+          ]
+        },
+        "physics": [
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact."
+        ],
+        "lighting": [
+          "soft directional key",
+          "from upper front unless explicitly specified",
+          "Keep structural light on entity.traveler"
+        ],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 6
+        },
+        "staging": {
+          "level": "staged_recommended",
+          "stages": [
+            {
+              "stage": 1,
+              "focus": [
+                "composition",
+                "entities",
+                "count",
+                "space",
+                "motion",
+                "gravity"
+              ],
+              "locked": [
+                "identity",
+                "presence",
+                "forbidden"
+              ]
+            },
+            {
+              "stage": 2,
+              "focus": [
+                "identity",
+                "face",
+                "hands",
+                "clothing",
+                "key props"
+              ],
+              "locked": [
+                "stage 1"
+              ]
+            },
+            {
+              "stage": 3,
+              "focus": [
+                "credibility",
+                "culture",
+                "text",
+                "usage traces"
+              ],
+              "locked": [
+                "stage 1",
+                "stage 2"
+              ]
+            },
+            {
+              "stage": 4,
+              "focus": [
+                "lighting",
+                "color",
+                "material restraint",
+                "local refinement"
+              ],
+              "locked": [
+                "all hard items"
+              ]
+            }
+          ]
+        },
+        "softItems": [],
+        "hardItems": [
+          "required entity: 旅人",
+          "required entity: 海螺",
+          "required entity: 茶壶",
+          "forbidden: 现代家具"
+        ],
+        "compressionAudit": {
+          "removed": [
+            "generic praise adjectives",
+            "duplicated low-priority style words"
+          ],
+          "merged": [
+            "entity identity and affordance instructions"
+          ],
+          "downgraded": []
+        },
+        "outputModality": "image",
+        "provenance": {
+          "contractHash": "e486928b540d278bc75dca1022f162e192a815008b8b382d22006a910b0eeb8a",
+          "aestheticPlanHash": "fc0bf781576e31529a06ba7e3e859b958c85293ccb0c6a3bf1128fe4171be97c"
+        }
+      },
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 4,
+        "relationCount": 0,
+        "hardConstraintCount": 4,
+        "complexity": "staged_recommended"
+      },
+      "visualReview": {
+        "status": "PASS",
+        "score": 0.95,
+        "observations": [
+          "two travelers, teapot, shell scale and active negative space are preserved",
+          "watercolor grammar is clear",
+          "no modern furniture detected"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    },
+    {
+      "id": "case-c",
+      "title": "轨道温室",
+      "intent": "近地轨道中的构成主义温室，三株高大红叶植物与一名穿白色宇航服的园丁，黑色对角线结构，钴蓝几何窗，严格三色海报风。",
+      "image": "/images/case-c.png",
+      "semanticProposal": {
+        "schemaVersion": "2.2.1",
+        "operations": [
+          {
+            "kind": "declare_entity",
+            "id": "entity.gardener",
+            "entityType": "gardener",
+            "label": "园丁",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 31,
+                "end": 33,
+                "text": "园丁"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_saliency",
+            "targetId": "entity.gardener",
+            "semantic": 1,
+            "visual": 1,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 31,
+                "end": 33,
+                "text": "园丁"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.greenhouse",
+            "entityType": "greenhouse",
+            "label": "温室",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 10,
+                "end": 12,
+                "text": "温室"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.plant",
+            "entityType": "plant",
+            "label": "植物",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 19,
+                "end": 21,
+                "text": "植物"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "entity.plant",
+            "attribute": "count",
+            "value": "3",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 19,
+                "end": 21,
+                "text": "植物"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_style_preference",
+            "style": "constructivist",
+            "provenance": {
+              "kind": "safe_inference",
+              "rationale": "normalized from explicit source text as constructivist"
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "identity",
+            "value": "近地轨道中的构成主义温室，三株高大红叶植物与一名穿白色宇航服的园丁，黑色对角线结构，钴蓝几何窗，严格三色海报风。",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 0,
+                "end": 56,
+                "text": "近地轨道中的构成主义温室，三株高大红叶植物与一名穿白色宇航服的园丁，黑色对角线结构，钴蓝几何窗，严格三色海报风。"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "红",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 17,
+                "end": 18,
+                "text": "红"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "白",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 25,
+                "end": 26,
+                "text": "白"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "黑",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 34,
+                "end": 35,
+                "text": "黑"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "蓝",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 43,
+                "end": 44,
+                "text": "蓝"
+              }
+            },
+            "confidence": 1
+          }
+        ],
+        "ambiguities": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95
+          }
+        ],
+        "sourceEvidence": [
+          {
+            "operationId": "entity.gardener",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 31,
+                "end": 33,
+                "text": "园丁"
+              }
+            }
+          },
+          {
+            "operationId": "entity.greenhouse",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 10,
+                "end": 12,
+                "text": "温室"
+              }
+            }
+          },
+          {
+            "operationId": "entity.plant",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 19,
+                "end": 21,
+                "text": "植物"
+              }
+            }
+          }
+        ],
+        "confidence": 1,
+        "sourceText": "近地轨道中的构成主义温室，三株高大红叶植物与一名穿白色宇航服的园丁，黑色对角线结构，钴蓝几何窗，严格三色海报风。"
+      },
+      "contract": {
+        "schemaVersion": "2.2.1",
+        "requestId": "req_ed7172dc6504d3e2",
+        "sceneIdentity": "近地轨道中的构成主义温室，三株高大红叶植物与一名穿白色宇航服的园丁，黑色对角线结构，钴蓝几何窗，严格三色海报风。",
+        "entities": [
+          {
+            "id": "entity.gardener",
+            "type": "gardener",
+            "label": "园丁",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.greenhouse",
+            "type": "greenhouse",
+            "label": "温室",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.plant",
+            "type": "plant",
+            "label": "植物",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          }
+        ],
+        "attributes": {
+          "entity.plant": {
+            "count": "3"
+          },
+          "scene": {
+            "identity": "近地轨道中的构成主义温室，三株高大红叶植物与一名穿白色宇航服的园丁，黑色对角线结构，钴蓝几何窗，严格三色海报风。",
+            "palette": "蓝"
+          }
+        },
+        "states": [],
+        "counts": [
+          {
+            "targetId": "entity.plant",
+            "expected": 3,
+            "tolerance": 0,
+            "mode": "exact"
+          }
+        ],
+        "motions": [],
+        "relations": [],
+        "events": [],
+        "presence": [
+          {
+            "targetId": "entity.gardener",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.greenhouse",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.plant",
+            "presence": "required",
+            "source": "user"
+          }
+        ],
+        "identityInvariants": [
+          {
+            "targetId": "entity.gardener",
+            "invariants": [
+              "gardener",
+              "园丁"
+            ]
+          },
+          {
+            "targetId": "entity.greenhouse",
+            "invariants": [
+              "greenhouse",
+              "温室"
+            ]
+          },
+          {
+            "targetId": "entity.plant",
+            "invariants": [
+              "plant",
+              "植物"
+            ]
+          }
+        ],
+        "spatialInvariants": [],
+        "scaleRelations": [],
+        "narrativeWeights": {
+          "entity.gardener": 1,
+          "entity.greenhouse": 0.7000000000000001,
+          "entity.plant": 0.6000000000000001
+        },
+        "saliencyWeights": {
+          "entity.gardener": 1
+        },
+        "narrativeProps": [],
+        "semanticOpenness": [],
+        "stylePreferences": [
+          {
+            "style": "constructivist",
+            "source": "runtime"
+          }
+        ],
+        "forbiddenOutcomes": [],
+        "freedomSlots": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95,
+            "accepted": true
+          }
+        ],
+        "unresolvedAmbiguities": [],
+        "composition": {},
+        "palette": [
+          "红",
+          "白",
+          "黑",
+          "蓝"
+        ],
+        "explicitPose": {},
+        "explicitGaze": {},
+        "outputModality": "image"
+      },
+      "aestheticPlan": {
+        "schemaVersion": "2.2.1",
+        "visualThesis": "Protect the primary subject while preserving the user's hard constraints.",
+        "focalHierarchy": [
+          {
+            "targetId": "entity.gardener",
+            "rank": 1,
+            "semanticWeight": 1,
+            "visualWeight": 1,
+            "detailBudget": 0.9
+          },
+          {
+            "targetId": "entity.greenhouse",
+            "rank": 2,
+            "semanticWeight": 0.7000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          },
+          {
+            "targetId": "entity.plant",
+            "rank": 3,
+            "semanticWeight": 0.6000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          }
+        ],
+        "composition": {
+          "focalPath": [
+            "entity.gardener",
+            "entity.greenhouse",
+            "entity.plant"
+          ],
+          "protectedRegions": [
+            "entity.gardener",
+            "entity.greenhouse",
+            "entity.plant"
+          ]
+        },
+        "poseDynamics": {
+          "directives": [
+            "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+          ],
+          "gravity": [
+            "All hanging, liquid and fabric elements follow gravity."
+          ],
+          "inertia": [
+            "Motion direction is coherent with body momentum and contact."
+          ]
+        },
+        "formLighting": {
+          "source": "soft directional key",
+          "direction": "from upper front unless explicitly specified",
+          "facePlanes": [
+            "Keep structural light on entity.gardener"
+          ]
+        },
+        "shapeLanguage": {
+          "entityRules": {
+            "entity.gardener": [
+              "preserve gardener identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.greenhouse": [
+              "preserve greenhouse identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.plant": [
+              "preserve plant identity",
+              "avoid unrequested substitutions"
+            ]
+          }
+        },
+        "faceIdentity": {
+          "targetId": "entity.gardener",
+          "contour": "distinctive head-to-jaw proportion",
+          "eyeShape": "specific eye aperture rather than generic large eyes",
+          "browEyeAxis": "asymmetric brow-eye relation",
+          "noseMouth": "declared nose-mouth spacing",
+          "asymmetry": "subtle non-destructive asymmetry",
+          "recognitionPoint": "hairline or ear/side-profile cue",
+          "expressionDeformation": "expression changes eyelids, cheeks and mouth corners",
+          "lightStableFeature": "recognition point survives key light"
+        },
+        "expression": [],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 6
+        },
+        "renderingGrammar": {
+          "name": "constructivist",
+          "actions": [
+            "faithful visible forms",
+            "selective detail",
+            "no unrequested embellishment"
+          ]
+        },
+        "sceneCredibility": {
+          "functionalDetails": [
+            "Preserve visible contact, support and use relationships."
+          ],
+          "culturalAnchors": [],
+          "usageTraces": [
+            "Do not add generic decorative background detail."
+          ]
+        },
+        "controlledFreedom": [],
+        "decisions": [
+          {
+            "target": "entity.gardener",
+            "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+            "affectedNodes": [
+              "entity.gardener"
+            ],
+            "priority": 1,
+            "degradable": false,
+            "source": "profile:default"
+          },
+          {
+            "target": "background",
+            "reason": "Limit background detail to protect semantic readability.",
+            "affectedNodes": [],
+            "priority": 0.7,
+            "degradable": true,
+            "source": "capability:mock"
+          }
+        ]
+      },
+      "renderIntent": {
+        "kind": "vast.render-intent",
+        "schemaVersion": "2.2.1",
+        "prompt": "Scene: 近地轨道中的构成主义温室，三株高大红叶植物与一名穿白色宇航服的园丁，黑色对角线结构，钴蓝几何窗，严格三色海报风。 Render 园丁 as gardener; preserve identity and affordances. Render 温室 as greenhouse; preserve identity and affordances. Render 植物 as plant; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Protect the primary subject while preserving the user's hard constraints.",
+        "positiveInstructions": [
+          "Scene: 近地轨道中的构成主义温室，三株高大红叶植物与一名穿白色宇航服的园丁，黑色对角线结构，钴蓝几何窗，严格三色海报风。",
+          "Render 园丁 as gardener; preserve identity and affordances.",
+          "Render 温室 as greenhouse; preserve identity and affordances.",
+          "Render 植物 as plant; preserve identity and affordances.",
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact.",
+          "faithful visible forms",
+          "selective detail",
+          "no unrequested embellishment",
+          "Visual thesis: Protect the primary subject while preserving the user's hard constraints."
+        ],
+        "negativeConstraints": [],
+        "entityMappings": [
+          {
+            "entityId": "entity.gardener",
+            "instruction": "Render 园丁 as gardener; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.greenhouse",
+            "instruction": "Render 温室 as greenhouse; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.plant",
+            "instruction": "Render 植物 as plant; preserve identity and affordances."
+          }
+        ],
+        "composition": {
+          "focalPath": [
+            "entity.gardener",
+            "entity.greenhouse",
+            "entity.plant"
+          ],
+          "protectedRegions": [
+            "entity.gardener",
+            "entity.greenhouse",
+            "entity.plant"
+          ]
+        },
+        "physics": [
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact."
+        ],
+        "lighting": [
+          "soft directional key",
+          "from upper front unless explicitly specified",
+          "Keep structural light on entity.gardener"
+        ],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 6
+        },
+        "staging": {
+          "level": "staged_recommended",
+          "stages": [
+            {
+              "stage": 1,
+              "focus": [
+                "composition",
+                "entities",
+                "count",
+                "space",
+                "motion",
+                "gravity"
+              ],
+              "locked": [
+                "identity",
+                "presence",
+                "forbidden"
+              ]
+            },
+            {
+              "stage": 2,
+              "focus": [
+                "identity",
+                "face",
+                "hands",
+                "clothing",
+                "key props"
+              ],
+              "locked": [
+                "stage 1"
+              ]
+            },
+            {
+              "stage": 3,
+              "focus": [
+                "credibility",
+                "culture",
+                "text",
+                "usage traces"
+              ],
+              "locked": [
+                "stage 1",
+                "stage 2"
+              ]
+            },
+            {
+              "stage": 4,
+              "focus": [
+                "lighting",
+                "color",
+                "material restraint",
+                "local refinement"
+              ],
+              "locked": [
+                "all hard items"
+              ]
+            }
+          ]
+        },
+        "softItems": [],
+        "hardItems": [
+          "required entity: 园丁",
+          "required entity: 温室",
+          "required entity: 植物"
+        ],
+        "compressionAudit": {
+          "removed": [
+            "generic praise adjectives",
+            "duplicated low-priority style words"
+          ],
+          "merged": [
+            "entity identity and affordance instructions"
+          ],
+          "downgraded": []
+        },
+        "outputModality": "image",
+        "provenance": {
+          "contractHash": "344b4d5a3783968c6d7d44d154b5af592d3d1ab554ddec7696fa958f44f0a29d",
+          "aestheticPlanHash": "77951c2226020d7b9008138338ef65e6b02382dc1e224cfacaa6b90b61dff298"
+        }
+      },
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 3,
+        "relationCount": 0,
+        "hardConstraintCount": 3,
+        "complexity": "staged_recommended"
+      },
+      "visualReview": {
+        "status": "PASS",
+        "score": 0.92,
+        "observations": [
+          "three principal red plants and one gardener are readable",
+          "constructivist red-black-blue grammar is strong",
+          "count and palette constraints are preserved"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    },
+    {
+      "id": "case-d",
+      "title": "天文台木刻",
+      "intent": "山顶旧天文台里，一位年长天文学家抬头观察星图，机械鸟停在木桌上，粗粝木刻版画，竖向构图，保留人物身份与手部动作，禁止城市天际线。",
+      "image": "/images/case-d.png",
+      "semanticProposal": {
+        "schemaVersion": "2.2.1",
+        "operations": [
+          {
+            "kind": "declare_entity",
+            "id": "entity.bird",
+            "entityType": "bird",
+            "label": "机械鸟",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 23,
+                "end": 26,
+                "text": "机械鸟"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_saliency",
+            "targetId": "entity.bird",
+            "semantic": 1,
+            "visual": 1,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 23,
+                "end": 26,
+                "text": "机械鸟"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.astronomer",
+            "entityType": "astronomer",
+            "label": "天文学家",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 12,
+                "end": 16,
+                "text": "天文学家"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "entity.astronomer",
+            "attribute": "count",
+            "value": "1",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 12,
+                "end": 16,
+                "text": "天文学家"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.observatory",
+            "entityType": "observatory",
+            "label": "天文台",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 3,
+                "end": 6,
+                "text": "天文台"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.star-map",
+            "entityType": "star-map",
+            "label": "星图",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 20,
+                "end": 22,
+                "text": "星图"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.table",
+            "entityType": "table",
+            "label": "木桌",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 28,
+                "end": 30,
+                "text": "木桌"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.person",
+            "entityType": "person",
+            "label": "人物",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 46,
+                "end": 48,
+                "text": "人物"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.城市天际线",
+            "entityType": "城市天际线",
+            "label": "城市天际线",
+            "presence": "forbidden",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 58,
+                "end": 63,
+                "text": "城市天际线"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_style_preference",
+            "style": "woodblock",
+            "provenance": {
+              "kind": "safe_inference",
+              "rationale": "normalized from explicit source text as woodblock"
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_forbidden",
+            "target": "城市天际线",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 58,
+                "end": 63,
+                "text": "城市天际线"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "identity",
+            "value": "山顶旧天文台里，一位年长天文学家抬头观察星图，机械鸟停在木桌上，粗粝木刻版画，竖向构图，保留人物身份与手部动作，禁止城市天际线。",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 0,
+                "end": 64,
+                "text": "山顶旧天文台里，一位年长天文学家抬头观察星图，机械鸟停在木桌上，粗粝木刻版画，竖向构图，保留人物身份与手部动作，禁止城市天际线。"
+              }
+            },
+            "confidence": 1
+          }
+        ],
+        "ambiguities": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95
+          }
+        ],
+        "sourceEvidence": [
+          {
+            "operationId": "entity.bird",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 23,
+                "end": 26,
+                "text": "机械鸟"
+              }
+            }
+          },
+          {
+            "operationId": "entity.astronomer",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 12,
+                "end": 16,
+                "text": "天文学家"
+              }
+            }
+          },
+          {
+            "operationId": "entity.observatory",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 3,
+                "end": 6,
+                "text": "天文台"
+              }
+            }
+          },
+          {
+            "operationId": "entity.star-map",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 20,
+                "end": 22,
+                "text": "星图"
+              }
+            }
+          },
+          {
+            "operationId": "entity.table",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 28,
+                "end": 30,
+                "text": "木桌"
+              }
+            }
+          },
+          {
+            "operationId": "entity.person",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 46,
+                "end": 48,
+                "text": "人物"
+              }
+            }
+          },
+          {
+            "operationId": "entity.城市天际线",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 58,
+                "end": 63,
+                "text": "城市天际线"
+              }
+            }
+          }
+        ],
+        "confidence": 1,
+        "sourceText": "山顶旧天文台里，一位年长天文学家抬头观察星图，机械鸟停在木桌上，粗粝木刻版画，竖向构图，保留人物身份与手部动作，禁止城市天际线。"
+      },
+      "contract": {
+        "schemaVersion": "2.2.1",
+        "requestId": "req_f186abbdeafe4f8f",
+        "sceneIdentity": "山顶旧天文台里，一位年长天文学家抬头观察星图，机械鸟停在木桌上，粗粝木刻版画，竖向构图，保留人物身份与手部动作，禁止城市天际线。",
+        "entities": [
+          {
+            "id": "entity.bird",
+            "type": "bird",
+            "label": "机械鸟",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.astronomer",
+            "type": "astronomer",
+            "label": "天文学家",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.observatory",
+            "type": "observatory",
+            "label": "天文台",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.star-map",
+            "type": "star-map",
+            "label": "星图",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.table",
+            "type": "table",
+            "label": "木桌",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.person",
+            "type": "person",
+            "label": "人物",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.城市天际线",
+            "type": "城市天际线",
+            "label": "城市天际线",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          }
+        ],
+        "attributes": {
+          "entity.astronomer": {
+            "count": "1"
+          },
+          "scene": {
+            "identity": "山顶旧天文台里，一位年长天文学家抬头观察星图，机械鸟停在木桌上，粗粝木刻版画，竖向构图，保留人物身份与手部动作，禁止城市天际线。"
+          }
+        },
+        "states": [],
+        "counts": [
+          {
+            "targetId": "entity.astronomer",
+            "expected": 1,
+            "tolerance": 0,
+            "mode": "exact"
+          }
+        ],
+        "motions": [],
+        "relations": [],
+        "events": [],
+        "presence": [
+          {
+            "targetId": "entity.bird",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.astronomer",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.observatory",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.star-map",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.table",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.person",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.城市天际线",
+            "presence": "forbidden",
+            "source": "user"
+          }
+        ],
+        "identityInvariants": [
+          {
+            "targetId": "entity.bird",
+            "invariants": [
+              "bird",
+              "机械鸟"
+            ]
+          },
+          {
+            "targetId": "entity.astronomer",
+            "invariants": [
+              "astronomer",
+              "天文学家"
+            ]
+          },
+          {
+            "targetId": "entity.observatory",
+            "invariants": [
+              "observatory",
+              "天文台"
+            ]
+          },
+          {
+            "targetId": "entity.star-map",
+            "invariants": [
+              "star-map",
+              "星图"
+            ]
+          },
+          {
+            "targetId": "entity.table",
+            "invariants": [
+              "table",
+              "木桌"
+            ]
+          },
+          {
+            "targetId": "entity.person",
+            "invariants": [
+              "person",
+              "人物"
+            ]
+          },
+          {
+            "targetId": "entity.城市天际线",
+            "invariants": [
+              "城市天际线",
+              "城市天际线"
+            ]
+          }
+        ],
+        "spatialInvariants": [],
+        "scaleRelations": [],
+        "narrativeWeights": {
+          "entity.bird": 1,
+          "entity.astronomer": 0.7000000000000001,
+          "entity.observatory": 0.6000000000000001,
+          "entity.star-map": 0.5,
+          "entity.table": 0.4,
+          "entity.person": 0.30000000000000004,
+          "entity.城市天际线": 0.19999999999999996
+        },
+        "saliencyWeights": {
+          "entity.bird": 1
+        },
+        "narrativeProps": [],
+        "semanticOpenness": [],
+        "stylePreferences": [
+          {
+            "style": "woodblock",
+            "source": "runtime"
+          }
+        ],
+        "forbiddenOutcomes": [
+          {
+            "target": "城市天际线"
+          }
+        ],
+        "freedomSlots": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95,
+            "accepted": true
+          }
+        ],
+        "unresolvedAmbiguities": [],
+        "composition": {
+          "framing": "portrait"
+        },
+        "palette": [],
+        "explicitPose": {},
+        "explicitGaze": {},
+        "outputModality": "image"
+      },
+      "aestheticPlan": {
+        "schemaVersion": "2.2.1",
+        "visualThesis": "Protect the primary subject while preserving the user's hard constraints.",
+        "focalHierarchy": [
+          {
+            "targetId": "entity.bird",
+            "rank": 1,
+            "semanticWeight": 1,
+            "visualWeight": 1,
+            "detailBudget": 0.9
+          },
+          {
+            "targetId": "entity.astronomer",
+            "rank": 2,
+            "semanticWeight": 0.7000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          },
+          {
+            "targetId": "entity.observatory",
+            "rank": 3,
+            "semanticWeight": 0.6000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          }
+        ],
+        "composition": {
+          "framing": "portrait",
+          "focalPath": [
+            "entity.bird",
+            "entity.astronomer",
+            "entity.observatory"
+          ],
+          "protectedRegions": [
+            "entity.bird",
+            "entity.astronomer",
+            "entity.observatory"
+          ]
+        },
+        "poseDynamics": {
+          "directives": [
+            "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+          ],
+          "gravity": [
+            "All hanging, liquid and fabric elements follow gravity."
+          ],
+          "inertia": [
+            "Motion direction is coherent with body momentum and contact."
+          ]
+        },
+        "formLighting": {
+          "source": "soft directional key",
+          "direction": "from upper front unless explicitly specified",
+          "facePlanes": [
+            "Keep structural light on entity.bird"
+          ]
+        },
+        "shapeLanguage": {
+          "entityRules": {
+            "entity.bird": [
+              "preserve bird identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.astronomer": [
+              "preserve astronomer identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.observatory": [
+              "preserve observatory identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.star-map": [
+              "preserve star-map identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.table": [
+              "preserve table identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.person": [
+              "preserve person identity",
+              "avoid unrequested substitutions"
+            ]
+          }
+        },
+        "expression": [],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 10
+        },
+        "renderingGrammar": {
+          "name": "woodblock",
+          "actions": [
+            "coarse black contour",
+            "flat fills",
+            "limited registration offset",
+            "sparse paper/ink irregularity"
+          ]
+        },
+        "sceneCredibility": {
+          "functionalDetails": [
+            "Preserve visible contact, support and use relationships."
+          ],
+          "culturalAnchors": [],
+          "usageTraces": [
+            "Do not add generic decorative background detail."
+          ]
+        },
+        "controlledFreedom": [],
+        "decisions": [
+          {
+            "target": "entity.bird",
+            "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+            "affectedNodes": [
+              "entity.bird"
+            ],
+            "priority": 1,
+            "degradable": false,
+            "source": "profile:default"
+          },
+          {
+            "target": "background",
+            "reason": "Limit background detail to protect semantic readability.",
+            "affectedNodes": [],
+            "priority": 0.7,
+            "degradable": true,
+            "source": "capability:mock"
+          }
+        ]
+      },
+      "renderIntent": {
+        "kind": "vast.render-intent",
+        "schemaVersion": "2.2.1",
+        "prompt": "Scene: 山顶旧天文台里，一位年长天文学家抬头观察星图，机械鸟停在木桌上，粗粝木刻版画，竖向构图，保留人物身份与手部动作，禁止城市天际线。 Render 机械鸟 as bird; preserve identity and affordances. Render 天文学家 as astronomer; preserve identity and affordances. Render 天文台 as observatory; preserve identity and affordances. Render 星图 as star-map; preserve identity and affordances. Render 木桌 as table; preserve identity and affordances. Render 人物 as person; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. coarse black contour flat fills limited registration offset sparse paper/ink irregularity Visual thesis: Protect the primary subject while preserving the user's hard constraints. Do not render 城市天际线.",
+        "positiveInstructions": [
+          "Scene: 山顶旧天文台里，一位年长天文学家抬头观察星图，机械鸟停在木桌上，粗粝木刻版画，竖向构图，保留人物身份与手部动作，禁止城市天际线。",
+          "Render 机械鸟 as bird; preserve identity and affordances.",
+          "Render 天文学家 as astronomer; preserve identity and affordances.",
+          "Render 天文台 as observatory; preserve identity and affordances.",
+          "Render 星图 as star-map; preserve identity and affordances.",
+          "Render 木桌 as table; preserve identity and affordances.",
+          "Render 人物 as person; preserve identity and affordances.",
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact.",
+          "coarse black contour",
+          "flat fills",
+          "limited registration offset",
+          "sparse paper/ink irregularity",
+          "Visual thesis: Protect the primary subject while preserving the user's hard constraints."
+        ],
+        "negativeConstraints": [
+          "Do not render 城市天际线."
+        ],
+        "entityMappings": [
+          {
+            "entityId": "entity.bird",
+            "instruction": "Render 机械鸟 as bird; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.astronomer",
+            "instruction": "Render 天文学家 as astronomer; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.observatory",
+            "instruction": "Render 天文台 as observatory; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.star-map",
+            "instruction": "Render 星图 as star-map; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.table",
+            "instruction": "Render 木桌 as table; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.person",
+            "instruction": "Render 人物 as person; preserve identity and affordances."
+          }
+        ],
+        "composition": {
+          "framing": "portrait",
+          "focalPath": [
+            "entity.bird",
+            "entity.astronomer",
+            "entity.observatory"
+          ],
+          "protectedRegions": [
+            "entity.bird",
+            "entity.astronomer",
+            "entity.observatory"
+          ]
+        },
+        "physics": [
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact."
+        ],
+        "lighting": [
+          "soft directional key",
+          "from upper front unless explicitly specified",
+          "Keep structural light on entity.bird"
+        ],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 10
+        },
+        "staging": {
+          "level": "single_pass",
+          "stages": [
+            {
+              "stage": 1,
+              "focus": [
+                "composition",
+                "entities",
+                "constraints",
+                "style"
+              ],
+              "locked": [
+                "hard items"
+              ]
+            }
+          ]
+        },
+        "softItems": [],
+        "hardItems": [
+          "required entity: 机械鸟",
+          "required entity: 天文学家",
+          "required entity: 天文台",
+          "required entity: 星图",
+          "required entity: 木桌",
+          "required entity: 人物",
+          "forbidden: 城市天际线"
+        ],
+        "compressionAudit": {
+          "removed": [
+            "generic praise adjectives",
+            "duplicated low-priority style words"
+          ],
+          "merged": [
+            "entity identity and affordance instructions"
+          ],
+          "downgraded": []
+        },
+        "outputModality": "image",
+        "provenance": {
+          "contractHash": "81fcb424f9f17371567a12e7a3eb9737a8e10d0435a9f61ae043f7982e1e487f",
+          "aestheticPlanHash": "1da4b534aa6a4fd6cf17f61d71adb04a43278d6bad924b1ccef534573aaacdf9"
+        }
+      },
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 7,
+        "relationCount": 0,
+        "hardConstraintCount": 7,
+        "complexity": "single_pass"
+      },
+      "visualReview": {
+        "status": "PASS",
+        "score": 0.93,
+        "observations": [
+          "elderly astronomer identity, pointing hand, star chart and mechanical bird are present",
+          "woodblock grammar is coherent",
+          "no city skyline detected"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    },
+    {
+      "id": "case-e",
+      "title": "沙漠单轨站",
+      "intent": "蓝调时刻的沙漠单轨车站，一列银色列车停靠在低矮站台，三名旅行者形成清晰尺度关系，风吹衣物和沙尘方向一致，编辑插画风，横向构图。",
+      "image": "/images/case-e.png",
+      "semanticProposal": {
+        "schemaVersion": "2.2.1",
+        "operations": [
+          {
+            "kind": "declare_entity",
+            "id": "entity.train",
+            "entityType": "train",
+            "label": "列车",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 16,
+                "end": 18,
+                "text": "列车"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "entity.train",
+            "attribute": "count",
+            "value": "1",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 16,
+                "end": 18,
+                "text": "列车"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_saliency",
+            "targetId": "entity.train",
+            "semantic": 1,
+            "visual": 1,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 16,
+                "end": 18,
+                "text": "列车"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.station",
+            "entityType": "station",
+            "label": "车站",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 9,
+                "end": 11,
+                "text": "车站"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.platform",
+            "entityType": "platform",
+            "label": "站台",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 23,
+                "end": 25,
+                "text": "站台"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_entity",
+            "id": "entity.traveler",
+            "entityType": "traveler",
+            "label": "旅行者",
+            "presence": "required",
+            "identityLock": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 28,
+                "end": 31,
+                "text": "旅行者"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "entity.traveler",
+            "attribute": "count",
+            "value": "3",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 28,
+                "end": 31,
+                "text": "旅行者"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_style_preference",
+            "style": "editorial",
+            "provenance": {
+              "kind": "safe_inference",
+              "rationale": "normalized from explicit source text as editorial"
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "identity",
+            "value": "蓝调时刻的沙漠单轨车站，一列银色列车停靠在低矮站台，三名旅行者形成清晰尺度关系，风吹衣物和沙尘方向一致，编辑插画风，横向构图。",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 0,
+                "end": 63,
+                "text": "蓝调时刻的沙漠单轨车站，一列银色列车停靠在低矮站台，三名旅行者形成清晰尺度关系，风吹衣物和沙尘方向一致，编辑插画风，横向构图。"
+              }
+            },
+            "confidence": 1
+          },
+          {
+            "kind": "declare_attribute",
+            "targetId": "scene",
+            "attribute": "palette",
+            "value": "蓝",
+            "hard": true,
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 0,
+                "end": 1,
+                "text": "蓝"
+              }
+            },
+            "confidence": 1
+          }
+        ],
+        "ambiguities": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95
+          }
+        ],
+        "sourceEvidence": [
+          {
+            "operationId": "entity.train",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 16,
+                "end": 18,
+                "text": "列车"
+              }
+            }
+          },
+          {
+            "operationId": "entity.station",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 9,
+                "end": 11,
+                "text": "车站"
+              }
+            }
+          },
+          {
+            "operationId": "entity.platform",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 23,
+                "end": 25,
+                "text": "站台"
+              }
+            }
+          },
+          {
+            "operationId": "entity.traveler",
+            "provenance": {
+              "kind": "explicit_user",
+              "span": {
+                "start": 28,
+                "end": 31,
+                "text": "旅行者"
+              }
+            }
+          }
+        ],
+        "confidence": 1,
+        "sourceText": "蓝调时刻的沙漠单轨车站，一列银色列车停靠在低矮站台，三名旅行者形成清晰尺度关系，风吹衣物和沙尘方向一致，编辑插画风，横向构图。"
+      },
+      "contract": {
+        "schemaVersion": "2.2.1",
+        "requestId": "req_8438045fff2dbb78",
+        "sceneIdentity": "蓝调时刻的沙漠单轨车站，一列银色列车停靠在低矮站台，三名旅行者形成清晰尺度关系，风吹衣物和沙尘方向一致，编辑插画风，横向构图。",
+        "entities": [
+          {
+            "id": "entity.train",
+            "type": "train",
+            "label": "列车",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.station",
+            "type": "station",
+            "label": "车站",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.platform",
+            "type": "platform",
+            "label": "站台",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          },
+          {
+            "id": "entity.traveler",
+            "type": "traveler",
+            "label": "旅行者",
+            "identityLock": true,
+            "affordances": [],
+            "source": "user"
+          }
+        ],
+        "attributes": {
+          "entity.train": {
+            "count": "1"
+          },
+          "entity.traveler": {
+            "count": "3"
+          },
+          "scene": {
+            "identity": "蓝调时刻的沙漠单轨车站，一列银色列车停靠在低矮站台，三名旅行者形成清晰尺度关系，风吹衣物和沙尘方向一致，编辑插画风，横向构图。",
+            "palette": "蓝"
+          }
+        },
+        "states": [],
+        "counts": [
+          {
+            "targetId": "entity.train",
+            "expected": 1,
+            "tolerance": 0,
+            "mode": "exact"
+          },
+          {
+            "targetId": "entity.traveler",
+            "expected": 3,
+            "tolerance": 0,
+            "mode": "exact"
+          }
+        ],
+        "motions": [],
+        "relations": [],
+        "events": [],
+        "presence": [
+          {
+            "targetId": "entity.train",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.station",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.platform",
+            "presence": "required",
+            "source": "user"
+          },
+          {
+            "targetId": "entity.traveler",
+            "presence": "required",
+            "source": "user"
+          }
+        ],
+        "identityInvariants": [
+          {
+            "targetId": "entity.train",
+            "invariants": [
+              "train",
+              "列车"
+            ]
+          },
+          {
+            "targetId": "entity.station",
+            "invariants": [
+              "station",
+              "车站"
+            ]
+          },
+          {
+            "targetId": "entity.platform",
+            "invariants": [
+              "platform",
+              "站台"
+            ]
+          },
+          {
+            "targetId": "entity.traveler",
+            "invariants": [
+              "traveler",
+              "旅行者"
+            ]
+          }
+        ],
+        "spatialInvariants": [],
+        "scaleRelations": [],
+        "narrativeWeights": {
+          "entity.train": 1,
+          "entity.station": 0.7000000000000001,
+          "entity.platform": 0.6000000000000001,
+          "entity.traveler": 0.5
+        },
+        "saliencyWeights": {
+          "entity.train": 1
+        },
+        "narrativeProps": [],
+        "semanticOpenness": [],
+        "stylePreferences": [
+          {
+            "style": "editorial",
+            "source": "runtime"
+          }
+        ],
+        "forbiddenOutcomes": [],
+        "freedomSlots": [],
+        "assumptions": [
+          {
+            "id": "assumption.output-modality",
+            "statement": "Output modality defaults to image",
+            "rationale": "Renderer-neutral visual requests default to image output.",
+            "confidence": 0.95,
+            "accepted": true
+          }
+        ],
+        "unresolvedAmbiguities": [],
+        "composition": {
+          "framing": "landscape"
+        },
+        "palette": [
+          "蓝"
+        ],
+        "explicitPose": {},
+        "explicitGaze": {},
+        "outputModality": "image"
+      },
+      "aestheticPlan": {
+        "schemaVersion": "2.2.1",
+        "visualThesis": "Protect the primary subject while preserving the user's hard constraints.",
+        "focalHierarchy": [
+          {
+            "targetId": "entity.train",
+            "rank": 1,
+            "semanticWeight": 1,
+            "visualWeight": 1,
+            "detailBudget": 0.9
+          },
+          {
+            "targetId": "entity.station",
+            "rank": 2,
+            "semanticWeight": 0.7000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          },
+          {
+            "targetId": "entity.platform",
+            "rank": 3,
+            "semanticWeight": 0.6000000000000001,
+            "visualWeight": 0.4,
+            "detailBudget": 0.35
+          }
+        ],
+        "composition": {
+          "framing": "landscape",
+          "focalPath": [
+            "entity.train",
+            "entity.station",
+            "entity.platform"
+          ],
+          "protectedRegions": [
+            "entity.train",
+            "entity.station",
+            "entity.platform"
+          ]
+        },
+        "poseDynamics": {
+          "directives": [
+            "Preserve explicit pose and translate emotion into visible weight shift, shoulders, hands and gaze."
+          ],
+          "gravity": [
+            "All hanging, liquid and fabric elements follow gravity."
+          ],
+          "inertia": [
+            "Motion direction is coherent with body momentum and contact."
+          ]
+        },
+        "formLighting": {
+          "source": "soft directional key",
+          "direction": "from upper front unless explicitly specified",
+          "facePlanes": [
+            "Keep structural light on entity.train"
+          ]
+        },
+        "shapeLanguage": {
+          "entityRules": {
+            "entity.train": [
+              "preserve train identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.station": [
+              "preserve station identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.platform": [
+              "preserve platform identity",
+              "avoid unrequested substitutions"
+            ],
+            "entity.traveler": [
+              "preserve traveler identity",
+              "avoid unrequested substitutions"
+            ]
+          }
+        },
+        "expression": [],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 7
+        },
+        "renderingGrammar": {
+          "name": "editorial",
+          "actions": [
+            "faithful visible forms",
+            "selective detail",
+            "no unrequested embellishment"
+          ]
+        },
+        "sceneCredibility": {
+          "functionalDetails": [
+            "Preserve visible contact, support and use relationships."
+          ],
+          "culturalAnchors": [],
+          "usageTraces": [
+            "Do not add generic decorative background detail."
+          ]
+        },
+        "controlledFreedom": [],
+        "decisions": [
+          {
+            "target": "entity.train",
+            "reason": "Allocate the highest attention budget to the first declared or explicitly salient subject.",
+            "affectedNodes": [
+              "entity.train"
+            ],
+            "priority": 1,
+            "degradable": false,
+            "source": "profile:default"
+          },
+          {
+            "target": "background",
+            "reason": "Limit background detail to protect semantic readability.",
+            "affectedNodes": [],
+            "priority": 0.7,
+            "degradable": true,
+            "source": "capability:mock"
+          }
+        ]
+      },
+      "renderIntent": {
+        "kind": "vast.render-intent",
+        "schemaVersion": "2.2.1",
+        "prompt": "Scene: 蓝调时刻的沙漠单轨车站，一列银色列车停靠在低矮站台，三名旅行者形成清晰尺度关系，风吹衣物和沙尘方向一致，编辑插画风，横向构图。 Render 列车 as train; preserve identity and affordances. Render 车站 as station; preserve identity and affordances. Render 站台 as platform; preserve identity and affordances. Render 旅行者 as traveler; preserve identity and affordances. All hanging, liquid and fabric elements follow gravity. Motion direction is coherent with body momentum and contact. faithful visible forms selective detail no unrequested embellishment Visual thesis: Protect the primary subject while preserving the user's hard constraints.",
+        "positiveInstructions": [
+          "Scene: 蓝调时刻的沙漠单轨车站，一列银色列车停靠在低矮站台，三名旅行者形成清晰尺度关系，风吹衣物和沙尘方向一致，编辑插画风，横向构图。",
+          "Render 列车 as train; preserve identity and affordances.",
+          "Render 车站 as station; preserve identity and affordances.",
+          "Render 站台 as platform; preserve identity and affordances.",
+          "Render 旅行者 as traveler; preserve identity and affordances.",
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact.",
+          "faithful visible forms",
+          "selective detail",
+          "no unrequested embellishment",
+          "Visual thesis: Protect the primary subject while preserving the user's hard constraints."
+        ],
+        "negativeConstraints": [],
+        "entityMappings": [
+          {
+            "entityId": "entity.train",
+            "instruction": "Render 列车 as train; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.station",
+            "instruction": "Render 车站 as station; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.platform",
+            "instruction": "Render 站台 as platform; preserve identity and affordances."
+          },
+          {
+            "entityId": "entity.traveler",
+            "instruction": "Render 旅行者 as traveler; preserve identity and affordances."
+          }
+        ],
+        "composition": {
+          "framing": "landscape",
+          "focalPath": [
+            "entity.train",
+            "entity.station",
+            "entity.platform"
+          ],
+          "protectedRegions": [
+            "entity.train",
+            "entity.station",
+            "entity.platform"
+          ]
+        },
+        "physics": [
+          "All hanging, liquid and fabric elements follow gravity.",
+          "Motion direction is coherent with body momentum and contact."
+        ],
+        "lighting": [
+          "soft directional key",
+          "from upper front unless explicitly specified",
+          "Keep structural light on entity.train"
+        ],
+        "informationBudget": {
+          "foreground": 0.7,
+          "midground": 0.45,
+          "background": 0.2,
+          "texture": 0.2,
+          "estimatedConcepts": 7
+        },
+        "staging": {
+          "level": "single_pass",
+          "stages": [
+            {
+              "stage": 1,
+              "focus": [
+                "composition",
+                "entities",
+                "constraints",
+                "style"
+              ],
+              "locked": [
+                "hard items"
+              ]
+            }
+          ]
+        },
+        "softItems": [],
+        "hardItems": [
+          "required entity: 列车",
+          "required entity: 车站",
+          "required entity: 站台",
+          "required entity: 旅行者"
+        ],
+        "compressionAudit": {
+          "removed": [
+            "generic praise adjectives",
+            "duplicated low-priority style words"
+          ],
+          "merged": [
+            "entity identity and affordance instructions"
+          ],
+          "downgraded": []
+        },
+        "outputModality": "image",
+        "provenance": {
+          "contractHash": "9cae610ab797d7e2f03849c151db3832b00401abb96d2848dd6acf85b8959f89",
+          "aestheticPlanHash": "56891c4743d6099fe5fda911a73d629fbc9b0a4945167a28ccac10aa2d6f33e3"
+        }
+      },
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 4,
+        "relationCount": 0,
+        "hardConstraintCount": 4,
+        "complexity": "single_pass"
+      },
+      "visualReview": {
+        "status": "PASS",
+        "score": 0.92,
+        "observations": [
+          "exactly three travelers, train, platform and desert scale are readable",
+          "garments move in a consistent wind direction",
+          "no text or city towers detected"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "generatedAt": "2026-08-29T10:02:39.874Z",
+  "randomCases": 5,
+  "successfulImages": 5,
+  "provider": "codex-built-in-imagegen",
+  "qualifiesAsImageCliAdapterEvidence": false,
+  "reason": "Images were generated with Codex built-in authorization from the same user intents, not by the project image-cli adapter or exact RenderIntent prompt.",
+  "cases": [
+    {
+      "id": "case-a",
+      "title": "雨夜修车巷",
+      "image": "/images/case-a.png",
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 4,
+        "relationCount": 0,
+        "hardConstraintCount": 4,
+        "complexity": "single_pass"
+      },
+      "visualReview": {
+        "status": "PARTIAL_PASS",
+        "score": 0.86,
+        "observations": [
+          "yellow raincoat, red bicycle, wet neon alley and hand interaction are present",
+          "no car or readable text detected",
+          "result is photographic rather than editorial illustration"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    },
+    {
+      "id": "case-b",
+      "title": "贝壳茶会",
+      "image": "/images/case-b.png",
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 4,
+        "relationCount": 0,
+        "hardConstraintCount": 4,
+        "complexity": "staged_recommended"
+      },
+      "visualReview": {
+        "status": "PASS",
+        "score": 0.95,
+        "observations": [
+          "two travelers, teapot, shell scale and active negative space are preserved",
+          "watercolor grammar is clear",
+          "no modern furniture detected"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    },
+    {
+      "id": "case-c",
+      "title": "轨道温室",
+      "image": "/images/case-c.png",
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 3,
+        "relationCount": 0,
+        "hardConstraintCount": 3,
+        "complexity": "staged_recommended"
+      },
+      "visualReview": {
+        "status": "PASS",
+        "score": 0.92,
+        "observations": [
+          "three principal red plants and one gardener are readable",
+          "constructivist red-black-blue grammar is strong",
+          "count and palette constraints are preserved"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    },
+    {
+      "id": "case-d",
+      "title": "天文台木刻",
+      "image": "/images/case-d.png",
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 7,
+        "relationCount": 0,
+        "hardConstraintCount": 7,
+        "complexity": "single_pass"
+      },
+      "visualReview": {
+        "status": "PASS",
+        "score": 0.93,
+        "observations": [
+          "elderly astronomer identity, pointing hand, star chart and mechanical bird are present",
+          "woodblock grammar is coherent",
+          "no city skyline detected"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    },
+    {
+      "id": "case-e",
+      "title": "沙漠单轨站",
+      "image": "/images/case-e.png",
+      "audit": {
+        "validation": "PASS",
+        "extractedEntityCount": 4,
+        "relationCount": 0,
+        "hardConstraintCount": 4,
+        "complexity": "single_pass"
+      },
+      "visualReview": {
+        "status": "PASS",
+        "score": 0.92,
+        "observations": [
+          "exactly three travelers, train, platform and desert scale are readable",
+          "garments move in a consistent wind direction",
+          "no text or city towers detected"
+        ]
+      },
+      "generationEvidence": {
+        "provider": "codex-built-in-imagegen",
+        "generatedFromSameIntent": true,
+        "generatedFromRenderIntent": false
+      }
+    }
+  ]
+}

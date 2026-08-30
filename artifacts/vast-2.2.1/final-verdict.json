@@ -1,0 +1,29 @@
+{
+  "task_status": "INCOMPLETE",
+  "conformance": "STRUCTURAL",
+  "greenfield": true,
+  "old_source_dependencies": 0,
+  "cli_commands_passed": true,
+  "unit_pass_rate": 0,
+  "semantic_pass_rate": 1,
+  "metamorphic_pass_rate": 1,
+  "holdout_pass_rate": 0,
+  "anti_hardcode_passed": true,
+  "ablation_effective": false,
+  "external_visual_comparison_images": 5,
+  "live_render": {
+    "available": false,
+    "cases": 0,
+    "successful_images": 0,
+    "revision_non_regression_rate": null
+  },
+  "blocking_failures": [
+    "The full unit suite is not verified.",
+    "The image-cli adapter has no successful authenticated render.",
+    "Holdout, visual evaluator evidence, six qualifying live cases, and two real revision loops are missing."
+  ],
+  "known_limitations": [
+    "Five Codex imagegen comparison images do not qualify as image-cli adapter evidence.",
+    "The repository does not include an external holdout suite."
+  ]
+}

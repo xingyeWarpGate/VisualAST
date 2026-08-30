@@ -1,0 +1,6 @@
+{
+  "available": false,
+  "cases": 0,
+  "successful_images": 0,
+  "reason": "Run vast render with --renderer image-cli to collect live evidence."
+}

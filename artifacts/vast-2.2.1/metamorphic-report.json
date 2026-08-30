@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "checks": [
+    "stable entity count under word order",
+    "unrelated text isolation",
+    "subject substitution isolation"
+  ]
+}

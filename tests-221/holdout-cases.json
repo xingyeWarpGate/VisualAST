@@ -1,0 +1,12 @@
+[
+  {"id":"h01","text":"一只狗坐在蓝色椅子旁边，禁止文字。","requiredTypes":["dog","chair"],"forbidden":["文字"]},
+  {"id":"h02","text":"红色猫在木桌旁，水彩风格。","requiredTypes":["cat","table"],"forbidden":[]},
+  {"id":"h03","text":"一位女性推着自行车，横向构图，不要汽车。","requiredTypes":["person","bicycle"],"forbidden":["汽车"]},
+  {"id":"h04","text":"机械鸟停在树旁，竖向木刻版画。","requiredTypes":["bird","tree"],"forbidden":[]},
+  {"id":"h05","text":"小船靠近河岸，电影感横向构图。","requiredTypes":["boat","river"],"forbidden":[]},
+  {"id":"h06","text":"蛋糕放在桌子上，禁止人物与文字。","requiredTypes":["cake","table"],"forbidden":["人物","文字"]},
+  {"id":"h07","text":"房间里有五朵花，正方形构图，大面积留白。","requiredTypes":["room","flower"],"forbidden":[],"count":{"type":"flower","expected":5}},
+  {"id":"h08","text":"银色列车停在车站站台，编辑插画风。","requiredTypes":["train","station","platform"],"forbidden":[]},
+  {"id":"h09","text":"两位旅人在巨大海螺里喝茶。","requiredTypes":["traveler","shell"],"forbidden":[],"count":{"type":"traveler","expected":2}},
+  {"id":"h10","text":"园丁在温室里照料三株植物，构成主义风格。","requiredTypes":["gardener","greenhouse","plant"],"forbidden":[],"count":{"type":"plant","expected":3}}
+]
